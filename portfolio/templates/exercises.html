@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Exercises — Portfolio{% endblock %}
+{% block page_title %}Exercises{% endblock %}
+{% block page_subtitle %}In-class exercises used to reinforce learning during lessons{% endblock %}
+
+{% block header_actions %}
+    <a href="{% url 'portfolio:assessment' %}" class="btn btn-ghost btn-sm">
+        <i class="bi bi-arrow-left"></i> Back
+    </a>
+{% endblock %}
+
+{% block content %}
+
+<div class="card" style="margin-bottom:24px;">
+    <p class="section-title">
+        <i class="bi bi-pencil-square" style="color:var(--accent-orange);margin-right:8px;"></i>
+        About Exercises
+    </p>
+    <p style="font-size:14px;color:var(--text-secondary);line-height:1.8;max-width:760px;">
+        Class exercises were short in-lesson tasks used to check understanding and keep
+        students engaged. They served as formative checkpoints during teaching.
+        Click any image to preview.
+    </p>
+</div>
+
+<!-- Filter -->
+<div class="card" style="margin-bottom:24px;padding:14px 20px;">
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="btn btn-primary btn-sm filter-btn active" data-filter="all">All</button>
+        <button class="btn btn-ghost btn-sm filter-btn" data-filter="shs1">SHS 1</button>
+        <button class="btn btn-ghost btn-sm filter-btn" data-filter="shs2">SHS 2</button>
+        <button class="btn btn-ghost btn-sm filter-btn" data-filter="shs3">SHS 3</button>
+    </div>
+</div>
+
+<!-- Grid -->
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+            gap:20px;" id="itemGrid">
+
+    <div class="assess-card" data-filter="shs1"
+         style="background:var(--bg-card);border:1px solid var(--border);
+                border-top:3px solid var(--accent-orange);border-radius:var(--radius-md);
+                overflow:hidden;box-shadow:var(--shadow-sm);
+                transition:box-shadow .2s,transform .2s;">
+        <div data-lightbox
+             data-src="{% static 'images/assessments/exercise1.jpg' %}"
+             data-caption="[Exercise Title]"
+             style="aspect-ratio:4/3;overflow:hidden;cursor:pointer;
+                    background:var(--bg-page);position:relative;">
+            <div style="width:100%;height:100%;display:flex;flex-direction:column;
+                        align-items:center;justify-content:center;gap:8px;
+                        color:var(--text-light);">
+                <i class="bi bi-image" style="font-size:32px;color:var(--border);"></i>
+                <span style="font-size:12px;">exercise1</span>
+            </div>
+            <div style="position:absolute;inset:0;background:rgba(245,158,11,.15);
+                        opacity:0;transition:opacity .2s;display:flex;
+                        align-items:center;justify-content:center;" class="item-overlay">
+                <i class="bi bi-zoom-in"
+                   style="font-size:32px;color:#fff;
+                          filter:drop-shadow(0 2px 4px rgba(0,0,0,.4));"></i>
+            </div>
+        </div>
+        <div style="padding:14px;">
+            <div style="display:flex;justify-content:space-between;
+                        align-items:flex-start;gap:8px;margin-bottom:6px;">
+                <p style="font-size:13.5px;font-weight:700;color:var(--text-primary);
+                           line-height:1.4;">[Exercise 1 Title]</p>
+                <span class="badge badge-orange" style="flex-shrink:0;">Exercise</span>
+            </div>
+            <p style="font-size:12.5px;color:var(--text-secondary);
+                       line-height:1.6;margin-bottom:10px;">
+                [Description of this exercise.]
+            </p>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                <span style="font-size:11px;background:#FEF3C7;color:#D97706;
+                             padding:2px 8px;border-radius:var(--radius-pill);
+                             font-weight:600;">SHS 1</span>
+                <span style="font-size:11px;color:var(--text-light);">
+                    <i class="bi bi-calendar3"></i> [Date]
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!--  ⚠️ Copy card above to add more exercises  -->
+
+</div>
+
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+    <img src="" alt="Exercise" id="lightboxImg">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .assess-card:hover { box-shadow:var(--shadow-md); transform:translateY(-3px); }
+    .assess-card:hover .item-overlay { opacity:1 !important; }
+    .assess-card:hover img { transform:scale(1.05); }
+    .lightbox-caption { max-width:600px;text-align:center;white-space:normal;
+                        line-height:1.6;font-size:13.5px; }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.filter-btn').forEach(b => {
+                b.classList.remove('active','btn-primary');
+                b.classList.add('btn-ghost');
+            });
+            btn.classList.add('active','btn-primary');
+            btn.classList.remove('btn-ghost');
+            const filter = btn.dataset.filter;
+            document.querySelectorAll('.assess-card').forEach(card => {
+                card.style.display =
+                    filter === 'all' || card.dataset.filter.includes(filter) ? '' : 'none';
+            });
+        });
+    });
+</script>
+{% endblock %}

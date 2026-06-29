@@ -1,0 +1,253 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Quizzes & Exercises — Portfolio{% endblock %}
+{% block page_title %}Quizzes &amp; Exercises{% endblock %}
+{% block page_subtitle %}A visual record of all quizzes and exercises used during the internship{% endblock %}
+
+{% block header_actions %}
+    <a href="{% url 'portfolio:assessment' %}" class="btn btn-ghost btn-sm">
+        <i class="bi bi-arrow-left"></i> Back to Assessments
+    </a>
+{% endblock %}
+
+{% block content %}
+
+<!-- Intro -->
+<div class="card" style="margin-bottom:24px;">
+    <p class="section-title">
+        <i class="bi bi-clipboard-check" style="color:var(--primary);margin-right:8px;"></i>
+        About These Assessments
+    </p>
+    <p style="font-size:14px;color:var(--text-secondary);line-height:1.8;max-width:760px;">
+        This page showcases all quizzes and Exercises instruments designed and administered
+        during the internship. Click on any image to preview it in full size.
+    </p>
+</div>
+
+<!-- Filter Buttons -->
+<div class="card" style="margin-bottom:24px;padding:14px 20px;">
+    <div style="display:flex;gap:8px;flex-wrap:wrap;" id="quizFilters">
+        <button class="btn btn-primary btn-sm filter-btn active" data-filter="all">All</button>
+        <button class="btn btn-ghost btn-sm filter-btn" data-filter="formative">Formative</button>
+        <button class="btn btn-ghost btn-sm filter-btn" data-filter="summative">Summative</button>
+        <button class="btn btn-ghost btn-sm filter-btn" data-filter="shs1">SHS 1</button>
+        <button class="btn btn-ghost btn-sm filter-btn" data-filter="shs2">SHS 2</button>
+    </div>
+</div>
+
+<!-- Quiz Grid -->
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;"
+     id="quizGrid">
+
+    <!-- Quiz Card 1 -->
+    <div class="quiz-card" data-filter="formative shs1"
+         style="background:var(--bg-card);border:1px solid var(--border);
+                border-radius:var(--radius-md);overflow:hidden;
+                box-shadow:var(--shadow-sm);transition:box-shadow .2s,transform .2s;">
+
+        <!-- Image — clickable lightbox trigger -->
+        <div data-lightbox
+             data-src="{% static 'images/SHS1_Quiz.jpg' %}"
+             data-caption="SHS 1 Quiz — Computer Hardware"
+             style="aspect-ratio:4/3;overflow:hidden;cursor:pointer;
+                    background:var(--bg-page);position:relative;">
+            <img src="{% static 'images/SHS1_Quiz.jpg' %}" alt="SHS 1 Quiz"
+                 style="width:100%;height:100%;object-fit:cover;
+                        transition:transform .4s ease;">
+            <!-- Hover overlay -->
+            <div style="position:absolute;inset:0;background:rgba(67,97,238,.15);
+                        opacity:0;transition:opacity .2s;
+                        display:flex;align-items:center;justify-content:center;"
+                 class="quiz-overlay">
+                <i class="bi bi-zoom-in"
+                   style="font-size:32px;color:#fff;
+                          filter:drop-shadow(0 2px 4px rgba(0,0,0,.4));"></i>
+            </div>
+        </div>
+
+        <!-- Card Info -->
+        <div style="padding:16px;">
+            <div style="display:flex;align-items:flex-start;
+                        justify-content:space-between;gap:8px;margin-bottom:8px;">
+                <p style="font-size:14px;font-weight:700;color:var(--text-primary);
+                           line-height:1.4;">SHS 1 Quiz — Computer Hardware</p>
+                <span class="badge badge-primary" style="flex-shrink:0;">Formative</span>
+            </div>
+            <p style="font-size:12.5px;color:var(--text-secondary);line-height:1.65;
+                      margin-bottom:12px;">
+                SHS 1 Quiz was held to assess students knowledge area on the topic of
+                Computer Hardware. Designed to test understanding and practical application.
+            </p>
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                <span style="font-size:11px;background:var(--primary-light);
+                             color:var(--primary);padding:3px 10px;
+                             border-radius:var(--radius-pill);font-weight:600;">
+                    <i class="bi bi-people"></i> SHS 1
+                </span>
+                <span style="font-size:11px;color:var(--text-light);">
+                    <i class="bi bi-calendar3"></i> 10th December, 2025
+                </span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Quiz Card 2 — placeholder -->
+    <div class="quiz-card" data-filter="formative shs1"
+         style="background:var(--bg-card);border:1px solid var(--border);
+                border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);
+                transition:box-shadow .2s,transform .2s;">
+        <div data-lightbox
+             data-src="{% static '/images/SHS1_Exercise.jpg' %}"
+             data-caption="SHS 1 Class Exercise — Word Processing"
+             style="aspect-ratio:4/3;overflow:hidden;cursor:pointer;
+                    background:var(--bg-page);position:relative;">
+            <img src="{% static '/images/SHS1_Exercise.jpg' %}" alt="SHS 1 Exercise"
+                 style="width:100%;height:100%;object-fit:cover;
+                        transition:transform .4s ease;">
+            <!-- Hover overlay -->
+            <div style="position:absolute;inset:0;background:rgba(67,97,238,.15);
+                        opacity:0;transition:opacity .2s;
+                        display:flex;align-items:center;justify-content:center;"
+                 class="quiz-overlay">
+                <i class="bi bi-zoom-in"
+                   style="font-size:32px;color:#fff;
+                          filter:drop-shadow(0 2px 4px rgba(0,0,0,.4));"></i>
+            </div>
+        </div>
+        <div style="padding:16px;">
+            <div style="display:flex;align-items:flex-start;
+                        justify-content:space-between;gap:8px;margin-bottom:8px;">
+                <p style="font-size:14px;font-weight:700;color:var(--text-primary);
+                           line-height:1.4;">Word Processing</p>
+                <span class="badge badge-primary" style="flex-shrink:0;">Formative</span>
+            </div>
+            <p style="font-size:12.5px;color:var(--text-secondary);line-height:1.65;
+                      margin-bottom:12px;">
+                Student were task to differentiate between Save and Save As commands in Microsoft Word. 
+            </p>
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                <span style="font-size:11px;background:var(--primary-light);
+                             color:var(--primary);padding:3px 10px;
+                             border-radius:var(--radius-pill);font-weight:600;">
+                    <i class="bi bi-people"></i> SHS 1
+                </span>
+                <span style="font-size:11px;color:var(--text-light);">
+                    <i class="bi bi-calendar3"></i> 8th December, 2025
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiz Card 3 — placeholder -->
+    <div class="quiz-card" data-filter="formative shs1"
+         style="background:var(--bg-card);border:1px solid var(--border);
+                border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);
+                transition:box-shadow .2s,transform .2s;">
+        <div data-lightbox
+             data-src="{% static '/images/SHS1_Exercise1.jpg' %}"
+             data-caption="SHS 1 Class Exercise — Word Processing"
+             style="aspect-ratio:4/3;overflow:hidden;cursor:pointer;
+                    background:var(--bg-page);position:relative;">
+            <img src="{% static '/images/SHS1_Exercise1.jpg' %}" alt="SHS 1 Class Exercise"
+                 style="width:100%;height:100%;object-fit:cover;
+                        transition:transform .4s ease;">
+            <!-- Hover overlay -->
+            <div style="position:absolute;inset:0;background:rgba(67,97,238,.15);
+                        opacity:0;transition:opacity .2s;
+                        display:flex;align-items:center;justify-content:center;"
+                 class="quiz-overlay">
+                <i class="bi bi-zoom-in"
+                   style="font-size:32px;color:#fff;
+                          filter:drop-shadow(0 2px 4px rgba(0,0,0,.4));"></i>
+            </div>
+        </div>
+        <div style="padding:16px;">
+            <div style="display:flex;align-items:flex-start;
+                        justify-content:space-between;gap:8px;margin-bottom:8px;">
+                <p style="font-size:14px;font-weight:700;color:var(--text-primary);
+                           line-height:1.4;">Word Processing</p>
+                <span class="badge badge-primary" style="flex-shrink:0;">Formative</span>
+            </div>
+            <p style="font-size:12.5px;color:var(--text-secondary);line-height:1.65;
+                      margin-bottom:12px;">
+                Exercise administered to measure students understanding of the topic of Word Processing. 
+                Students were tasked to differentiate between Save and Save As commands in Microsoft Word.
+            </p>
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                <span style="font-size:11px;background:var(--primary-light);
+                             color:var(--primary);padding:3px 10px;
+                             border-radius:var(--radius-pill);font-weight:600;">
+                    <i class="bi bi-people"></i> SHS 1
+                </span>
+                <span style="font-size:11px;color:var(--text-light);">
+                    <i class="bi bi-calendar3"></i> 13th December, 2025
+                </span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Close">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <img src="" alt="Quiz image" id="lightboxImg">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .quiz-card:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-3px);
+    }
+    .quiz-card:hover .quiz-overlay {
+        opacity: 1 !important;
+    }
+    .quiz-card:hover img {
+        transform: scale(1.05);
+    }
+    .lightbox-caption {
+        max-width: 600px;
+        text-align: center;
+        white-space: normal;
+        line-height: 1.6;
+        font-size: 13.5px;
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    /* Quiz filter */
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const quizCards  = document.querySelectorAll('.quiz-card');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => {
+                b.classList.remove('active', 'btn-primary');
+                b.classList.add('btn-ghost');
+            });
+            btn.classList.add('active', 'btn-primary');
+            btn.classList.remove('btn-ghost');
+
+            const filter = btn.dataset.filter;
+            quizCards.forEach(card => {
+                const cardFilters = card.dataset.filter || '';
+                if (filter === 'all' || cardFilters.includes(filter)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Mentor Comments — Portfolio{% endblock %}
+{% block page_title %}Mentor / Supervisor Comments{% endblock %}
+{% block page_subtitle %}Feedback and evaluations received from supervising teachers and university supervisors{% endblock %}
+
+{% block header_actions %}
+    <!--  ⚠️ ADD signed mentor comment PDF to: static/documents/mentor_comments.pdf  -->
+    <a href="{% static 'documents/mentor_comments.pdf' %}" download class="btn btn-primary btn-sm">
+        <i class="bi bi-download"></i> Download PDF
+    </a>
+{% endblock %}
+
+{% block content %}
+
+<!-- Intro -->
+<div class="card" style="margin-bottom:28px;">
+    <p class="section-title"><i class="bi bi-chat-square-quote" style="color:var(--primary);margin-right:8px;"></i>About This Section</p>
+    <p style="font-size:14px;color:var(--text-secondary);line-height:1.8;max-width:760px;">
+        This section presents formal and informal feedback from my mentor teacher at the placement
+        school and my university supervisor. These comments reflect observations made during
+        lesson visits, one-on-one feedback sessions, and end-of-placement evaluations.
+        Signed originals are available in the downloadable PDF above.
+    </p>
+</div>
+
+<!-- Comment Cards -->
+<div class="mentor-grid">
+
+    <!-- Mentor 1 -->
+    <div class="mentor-card">
+        <div class="mentor-quote-icon"><i class="bi bi-quote"></i></div>
+        <p class="mentor-comment">
+            <!--  ⚠️ Replace with actual mentor comment  -->
+            "[Add the exact comment or feedback given by your school mentor teacher here.
+            This should be a direct quote or a faithful paraphrase of what they said or wrote
+            in their observation report / feedback form.]"
+        </p>
+        <div class="mentor-footer">
+            <div>
+                <p class="mentor-name">[Mentor Teacher Name]</p>
+                <p class="mentor-role">Mentor Teacher · [Placement School]</p>
+            </div>
+            <span class="mentor-date">[Date of observation]</span>
+        </div>
+    </div>
+
+    <!-- Mentor 2 (University Supervisor) -->
+    <div class="mentor-card alt-red">
+        <div class="mentor-quote-icon"><i class="bi bi-quote"></i></div>
+        <p class="mentor-comment">
+            "[Add the feedback from your university supervisor here — this could be from a
+            formal classroom visit, a written evaluation report, or verbal feedback session.]"
+        </p>
+        <div class="mentor-footer">
+            <div>
+                <p class="mentor-name">[University Supervisor Name]</p>
+                <p class="mentor-role">University Supervisor · UEW</p>
+            </div>
+            <span class="mentor-date">[Date of visit]</span>
+        </div>
+    </div>
+
+    <!-- Mentor 3 — Second Observation -->
+    <div class="mentor-card alt-orange">
+        <div class="mentor-quote-icon"><i class="bi bi-quote"></i></div>
+        <p class="mentor-comment">
+            "[Add a second comment from your mentor teacher or any other supervising teacher
+            who observed one of your lessons during the internship period.]"
+        </p>
+        <div class="mentor-footer">
+            <div>
+                <p class="mentor-name">[Observer Name]</p>
+                <p class="mentor-role">[Their Role &amp; School/Institution]</p>
+            </div>
+            <span class="mentor-date">[Date]</span>
+        </div>
+    </div>
+
+    <!-- Mentor 4 — HOD / Head Teacher -->
+    <div class="mentor-card alt-green">
+        <div class="mentor-quote-icon"><i class="bi bi-quote"></i></div>
+        <p class="mentor-comment">
+            "[Optional: Add a comment from the Head of Department, the Headmaster/Headmistress,
+            or a peer teacher who observed your work during the placement.]"
+        </p>
+        <div class="mentor-footer">
+            <div>
+                <p class="mentor-name">[Name]</p>
+                <p class="mentor-role">[Role — e.g. HOD ICT · Placement School]</p>
+            </div>
+            <span class="mentor-date">[Date]</span>
+        </div>
+    </div>
+
+</div>
+
+
+
+<!-- Intern Response -->
+<div class="card" style="margin-top:24px;border-left:4px solid var(--primary);">
+    <p class="section-title"><i class="bi bi-person-check" style="color:var(--primary);margin-right:8px;"></i>My Response to Feedback</p>
+    <p style="font-size:14px;color:var(--text-secondary);line-height:1.8;">
+        <!--  ⚠️ Write your personal response to the mentor feedback  -->
+        [Write a short paragraph reflecting on the feedback you received. How did it feel
+        to receive this feedback? What specific actions have you taken or will you take
+        in response? How has it improved your teaching practice?]
+    </p>
+</div>
+
+{% endblock %}

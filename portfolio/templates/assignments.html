@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Assignments — Portfolio{% endblock %}
+{% block page_title %}Assignments{% endblock %}
+{% block page_subtitle %}All assignments given to students during the internship{% endblock %}
+
+{% block header_actions %}
+    <a href="{% url 'portfolio:assessment' %}" class="btn btn-ghost btn-sm">
+        <i class="bi bi-arrow-left"></i> Back
+    </a>
+{% endblock %}
+
+{% block content %}
+
+<div class="card" style="margin-bottom:24px;">
+    <p class="section-title">
+        <i class="bi bi-journal-text" style="color:var(--primary);margin-right:8px;"></i>
+        About Assignments
+    </p>
+    <p style="font-size:14px;color:var(--text-secondary);line-height:1.8;max-width:760px;">
+        Assignments were given to students as take-home or in-class tasks to reinforce
+        concepts taught during lessons. Click any image to preview it in full size.
+    </p>
+</div>
+
+<!-- Filter -->
+<div class="card" style="margin-bottom:24px;padding:14px 20px;">
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="btn btn-primary btn-sm filter-btn active" data-filter="all">All</button>
+        <button class="btn btn-ghost btn-sm filter-btn" data-filter="shs1">SHS 1</button>
+        <button class="btn btn-ghost btn-sm filter-btn" data-filter="shs2">SHS 2</button>
+    </div>
+</div>
+
+<!-- Grid -->
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+            gap:20px;" id="itemGrid">
+
+    <!-- Card -->
+    <div class="assess-card" data-filter="shs1"
+         style="background:var(--bg-card);border:1px solid var(--border);
+                border-top:3px solid var(--primary);border-radius:var(--radius-md);
+                overflow:hidden;box-shadow:var(--shadow-sm);
+                transition:box-shadow .2s,transform .2s;">
+        <div data-lightbox
+             data-src="{% static '/images/SHS1_HomeWork.jpg' %}"
+             data-caption="Computer Hardware"
+             style="aspect-ratio:4/3;overflow:hidden;cursor:pointer;
+                    background:var(--bg-page);position:relative;">
+            <img src="{% static '/images/SHS1_HomeWork.jpg' %}" alt="SHS 1 Class Exercise"
+                 style="width:100%;height:100%;object-fit:cover;
+                        transition:transform .4s ease;">
+            <!-- Hover overlay -->
+            <div style="position:absolute;inset:0;background:rgba(67,97,238,.15);
+                        opacity:0;transition:opacity .2s;
+                        display:flex;align-items:center;justify-content:center;"
+                 class="quiz-overlay">
+                <i class="bi bi-zoom-in"
+                   style="font-size:32px;color:#fff;
+                          filter:drop-shadow(0 2px 4px rgba(0,0,0,.4));"></i>
+            </div>
+        </div>
+        <div style="padding:14px;">
+            <div style="display:flex;justify-content:space-between;
+                        align-items:flex-start;gap:8px;margin-bottom:6px;">
+                <p style="font-size:13.5px;font-weight:700;color:var(--text-primary);
+                           line-height:1.4;">Computer Hardware</p>
+                <span class="badge badge-primary" style="flex-shrink:0;">Assignment</span>
+            </div>
+            <p style="font-size:12.5px;color:var(--text-secondary);
+                       line-height:1.6;margin-bottom:10px;">
+                    This assignment was given to students to asses their knowledge area on the topic of Computer Hardware.
+                    The assignment was designed to test students understanding of the concepts taught in class and
+                    their ability to apply them in practical situations.
+            </p>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                <span style="font-size:11px;background:var(--primary-light);
+                             color:var(--primary);padding:2px 8px;
+                             border-radius:var(--radius-pill);font-weight:600;">SHS 1</span>
+                <span style="font-size:11px;color:var(--text-light);">
+                    <i class="bi bi-calendar3"></i> 8th December, 2025
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!--  ⚠️ Copy card above to add more assignments  -->
+
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+    <img src="" alt="Assignment" id="lightboxImg">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .assess-card:hover { box-shadow:var(--shadow-md); transform:translateY(-3px); }
+    .assess-card:hover .item-overlay { opacity:1 !important; }
+    .assess-card:hover img { transform:scale(1.05); }
+    .lightbox-caption { max-width:600px;text-align:center;white-space:normal;
+                        line-height:1.6;font-size:13.5px; }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.filter-btn').forEach(b => {
+                b.classList.remove('active','btn-primary');
+                b.classList.add('btn-ghost');
+            });
+            btn.classList.add('active','btn-primary');
+            btn.classList.remove('btn-ghost');
+            const filter = btn.dataset.filter;
+            document.querySelectorAll('.assess-card').forEach(card => {
+                card.style.display =
+                    filter === 'all' || card.dataset.filter.includes(filter) ? '' : 'none';
+            });
+        });
+    });
+</script>
+{% endblock %}

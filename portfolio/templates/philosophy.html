@@ -1,0 +1,283 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Teaching Philosophy — Portfolio{% endblock %}
+{% block page_title %}Teaching Philosophy{% endblock %}
+{% block page_subtitle %}A transformative, inclusive, and research-driven approach to education{% endblock %}
+{% block header_actions %}
+    <a href="{% url 'portfolio:philosophy_preview' %}" target="_blank" class="btn btn-outline btn-sm">
+        <i class="bi bi-eye"></i> Preview
+    </a>
+    <a href="{% static '/documents/Teaching_Philosophy.pdf' %}" download class="btn btn-primary btn-sm">
+        <i class="bi bi-download"></i> Download
+    </a>
+{% endblock %}
+
+{% block content %}
+
+<!-- ── Hero Quote ── -->
+<section class="philosophy-hero">
+    <blockquote>
+        "Good teaching cannot be reduced to technique; it comes from the identity and integrity of the teacher."
+    </blockquote>
+    <cite>— Parker Palmer, The Courage to Teach (1998, p. 10)</cite>
+</section>
+
+<!-- ── Opening Statement ── -->
+<div class="card" style="margin-bottom:24px;">
+    <p class="section-title">
+        <i class="bi bi-book" style="color:var(--primary);margin-right:8px;"></i>
+        My Philosophy Statement
+    </p>
+    <div class="philosophy-body">
+        <p>
+            As an educator with experiences from schooling, peer teaching, and knowledge from
+            educational courses, my teaching philosophy is rooted in the belief that education
+            should be <strong>transformative, inclusive, and research-driven</strong>. My approach
+            synthesizes cognitive science, constructivist pedagogy, and humanistic principles to
+            foster deep learning, critical thinking, and lifelong intellectual curiosity.
+        </p>
+        <p>
+            Below, I outline my core principles, supported by educational theories and empirical
+            research from other philosophers, to demonstrate why this philosophy represents the
+            gold and ultimate standard in teaching.
+        </p>
+    </div>
+</div>
+
+<!-- ── Core Principles ── -->
+<p class="section-title" style="margin-bottom:16px;">Core Principles</p>
+
+<!-- Principle 1 -->
+<div class="card" style="margin-bottom:20px;border-left:4px solid var(--primary);">
+    <div style="display:flex;align-items:flex-start;gap:16px;margin-bottom:16px;">
+        <div style="width:40px;height:40px;background:var(--primary-light);border-radius:8px;
+                    display:flex;align-items:center;justify-content:center;
+                    color:var(--primary);font-size:16px;font-weight:800;flex-shrink:0;">1</div>
+        <div>
+            <p class="principle-title">Student-Centred Learning</p>
+            <p style="font-size:12px;color:var(--primary);font-weight:600;margin-top:2px;">
+                Constructivism &amp; Active Learning
+            </p>
+        </div>
+    </div>
+    <p class="principle-body" style="margin-bottom:12px;">
+        Learning is most effective when students actively construct knowledge rather than
+        passively receive it. This principle is backed by:
+    </p>
+    <ul style="padding-left:20px;list-style:disc;margin-bottom:12px;">
+        <li style="font-size:13.5px;color:var(--text-secondary);margin-bottom:6px;line-height:1.7;">
+            <strong>Piaget's Constructivism</strong> — learners build understanding through
+            experiences and reflection.
+        </li>
+        <li style="font-size:13.5px;color:var(--text-secondary);margin-bottom:6px;line-height:1.7;">
+            <strong>Vygotsky's Social Constructivism</strong> — learning is socially mediated
+            through scaffolding and collaborative discourse.
+        </li>
+        <li style="font-size:13.5px;color:var(--text-secondary);margin-bottom:6px;line-height:1.7;">
+            <strong>Freire's Critical Pedagogy</strong> — education should empower students to
+            question and engage critically with the world.
+        </li>
+    </ul>
+    <p class="principle-body">
+        <strong>Methods used:</strong> Flipped classrooms, Problem-Based Learning (PBL),
+        and Socratic seminars.
+    </p>
+</div>
+
+<!-- Principle 2 -->
+<div class="card" style="margin-bottom:20px;border-left:4px solid var(--accent-red);">
+    <div style="display:flex;align-items:flex-start;gap:16px;margin-bottom:16px;">
+        <div style="width:40px;height:40px;background:#FEE2E2;border-radius:8px;
+                    display:flex;align-items:center;justify-content:center;
+                    color:var(--accent-red);font-size:16px;font-weight:800;flex-shrink:0;">2</div>
+        <div>
+            <p class="principle-title">Inclusive &amp; Culturally Responsive Teaching</p>
+            <p style="font-size:12px;color:var(--accent-red);font-weight:600;margin-top:2px;">
+                Equity Pedagogy
+            </p>
+        </div>
+    </div>
+    <p class="principle-body" style="margin-bottom:12px;">
+        Education must acknowledge diverse backgrounds and adapt to students' unique needs.
+        Backed by:
+    </p>
+    <ul style="padding-left:20px;list-style:disc;margin-bottom:12px;">
+        <li style="font-size:13.5px;color:var(--text-secondary);margin-bottom:6px;line-height:1.7;">
+            <strong>Banks' Multicultural Education Theory</strong> — curriculum should reflect
+            diverse perspectives.
+        </li>
+        <li style="font-size:13.5px;color:var(--text-secondary);margin-bottom:6px;line-height:1.7;">
+            <strong>Ladson-Billings' Culturally Relevant Pedagogy</strong> — teaching should
+            affirm students' cultural identities.
+        </li>
+        <li style="font-size:13.5px;color:var(--text-secondary);margin-bottom:6px;line-height:1.7;">
+            <strong>Universal Design for Learning (UDL)</strong> — multiple means of engagement,
+            representation, and expression.
+        </li>
+    </ul>
+    <p class="principle-body">
+        <strong>Methods used:</strong> Differentiated instruction, diverse readings &amp; case
+        studies, and regular student feedback loops.
+    </p>
+</div>
+
+<!-- Principle 3 -->
+<div class="card" style="margin-bottom:20px;border-left:4px solid var(--accent-orange);">
+    <div style="display:flex;align-items:flex-start;gap:16px;margin-bottom:16px;">
+        <div style="width:40px;height:40px;background:#FEF3C7;border-radius:8px;
+                    display:flex;align-items:center;justify-content:center;
+                    color:#D97706;font-size:16px;font-weight:800;flex-shrink:0;">3</div>
+        <div>
+            <p class="principle-title">Metacognition &amp; Growth Mindset</p>
+            <p style="font-size:12px;color:#D97706;font-weight:600;margin-top:2px;">
+                Cognitive Science
+            </p>
+        </div>
+    </div>
+    <p class="principle-body" style="margin-bottom:12px;">
+        Students learn best when they understand their own thinking and believe in their
+        capacity to grow. This ideology is backed by:
+    </p>
+    <ul style="padding-left:20px;list-style:disc;margin-bottom:12px;">
+        <li style="font-size:13.5px;color:var(--text-secondary);margin-bottom:6px;line-height:1.7;">
+            <strong>Dweck's Growth Mindset Theory</strong> — intelligence is malleable;
+            effort leads to mastery.
+        </li>
+        <li style="font-size:13.5px;color:var(--text-secondary);margin-bottom:6px;line-height:1.7;">
+            <strong>Flavell's Metacognition Theory</strong> — "thinking about thinking"
+            enhances self-regulation.
+        </li>
+        <li style="font-size:13.5px;color:var(--text-secondary);margin-bottom:6px;line-height:1.7;">
+            <strong>Bloom's Mastery Learning</strong> — students progress upon mastering
+            material, not fixed timelines.
+        </li>
+    </ul>
+    <p class="principle-body">
+        <strong>Methods used:</strong> Reflective journals, formative assessments with
+        feedback, and praising effort over innate ability.
+    </p>
+</div>
+
+<!-- Principle 4 -->
+<div class="card" style="margin-bottom:20px;border-left:4px solid var(--accent-green);">
+    <div style="display:flex;align-items:flex-start;gap:16px;margin-bottom:16px;">
+        <div style="width:40px;height:40px;background:#D1FAE5;border-radius:8px;
+                    display:flex;align-items:center;justify-content:center;
+                    color:#059669;font-size:16px;font-weight:800;flex-shrink:0;">4</div>
+        <div>
+            <p class="principle-title">Interdisciplinary &amp; Experiential Learning</p>
+            <p style="font-size:12px;color:#059669;font-weight:600;margin-top:2px;">
+                Dewey &amp; Kolb
+            </p>
+        </div>
+    </div>
+    <p class="principle-body" style="margin-bottom:12px;">
+        Knowledge should transcend disciplinary silos and connect to real-world contexts.
+        Backed by:
+    </p>
+    <ul style="padding-left:20px;list-style:disc;margin-bottom:12px;">
+        <li style="font-size:13.5px;color:var(--text-secondary);margin-bottom:6px;line-height:1.7;">
+            <strong>Dewey's Experiential Learning</strong> — learning by doing.
+        </li>
+        <li style="font-size:13.5px;color:var(--text-secondary);margin-bottom:6px;line-height:1.7;">
+            <strong>Kolb's Learning Cycle</strong> — concrete experience, reflection,
+            conceptualisation, and active experimentation.
+        </li>
+        <li style="font-size:13.5px;color:var(--text-secondary);margin-bottom:6px;line-height:1.7;">
+            <strong>Bruner's Spiral Curriculum</strong> — revisiting concepts at increasing
+            levels of complexity.
+        </li>
+    </ul>
+    <p class="principle-body">
+        <strong>Methods used:</strong> Case studies from multiple disciplines,
+        service-learning projects, internships, and research partnerships.
+    </p>
+</div>
+
+<!-- Principle 5 -->
+<div class="card" style="margin-bottom:20px;border-left:4px solid #7C3AED;">
+    <div style="display:flex;align-items:flex-start;gap:16px;margin-bottom:16px;">
+        <div style="width:40px;height:40px;background:#EDE9FE;border-radius:8px;
+                    display:flex;align-items:center;justify-content:center;
+                    color:#7C3AED;font-size:16px;font-weight:800;flex-shrink:0;">5</div>
+        <div>
+            <p class="principle-title">Technology as a Tool, Not a Crutch</p>
+            <p style="font-size:12px;color:#7C3AED;font-weight:600;margin-top:2px;">
+                Digital Pedagogy
+            </p>
+        </div>
+    </div>
+    <p class="principle-body" style="margin-bottom:12px;">
+        Technology should enhance, not replace deep learning and human interaction.
+        Stressed by:
+    </p>
+    <ul style="padding-left:20px;list-style:disc;margin-bottom:12px;">
+        <li style="font-size:13.5px;color:var(--text-secondary);margin-bottom:6px;line-height:1.7;">
+            <strong>Mayer's Cognitive Theory of Multimedia Learning</strong> — people learn
+            more deeply from words and pictures than from words alone.
+        </li>
+        <li style="font-size:13.5px;color:var(--text-secondary);margin-bottom:6px;line-height:1.7;">
+            <strong>TPACK Framework</strong> — balancing technological, pedagogical,
+            and content knowledge for effective integration.
+        </li>
+    </ul>
+    <p class="principle-body">
+        <strong>Methods used:</strong> Blended learning and digital storytelling to
+        cultivate communication skills and deepen understanding.
+    </p>
+</div>
+
+<!-- Principle 6 -->
+<div class="card" style="margin-bottom:24px;border-left:4px solid #0EA5E9;">
+    <div style="display:flex;align-items:flex-start;gap:16px;margin-bottom:16px;">
+        <div style="width:40px;height:40px;background:#E0F2FE;border-radius:8px;
+                    display:flex;align-items:center;justify-content:center;
+                    color:#0EA5E9;font-size:16px;font-weight:800;flex-shrink:0;">6</div>
+        <div>
+            <p class="principle-title">Assessment for Learning, Not Just Evaluation</p>
+            <p style="font-size:12px;color:#0EA5E9;font-weight:600;margin-top:2px;">
+                Formative Assessment
+            </p>
+        </div>
+    </div>
+    <p class="principle-body" style="margin-bottom:12px;">
+        Assessments should guide improvement, not just rank students. Backed by:
+    </p>
+    <ul style="padding-left:20px;list-style:disc;margin-bottom:12px;">
+        <li style="font-size:13.5px;color:var(--text-secondary);margin-bottom:6px;line-height:1.7;">
+            <strong>Black &amp; Wiliam's Formative Assessment</strong> — inside the black box;
+            assessment for learning drives achievement.
+        </li>
+        <li style="font-size:13.5px;color:var(--text-secondary);margin-bottom:6px;line-height:1.7;">
+            <strong>Scaffolding Theory</strong> (Wood, Bruner, Ross) — progressive support
+            until mastery is more crucial than assessment of learning alone.
+        </li>
+    </ul>
+    <p class="principle-body">
+        <strong>Methods used:</strong> Low-stakes quizzes with instant feedback, peer reviews
+        &amp; self-assessments, and portfolio assessments showcasing growth over time.
+    </p>
+</div>
+
+<!-- ── Conclusion ── -->
+<div class="card" style="background:linear-gradient(135deg,var(--primary) 0%,#7C3AED 100%);color:#fff;border:none;">
+    <p class="section-title" style="color:#fff;margin-bottom:12px;">
+        <i class="bi bi-stars" style="margin-right:8px;"></i>Conclusion
+    </p>
+    <div style="font-size:14px;line-height:1.85;opacity:.92;">
+        <p style="margin-bottom:12px;">
+            My approach is not theoretical idealism — it is a data-backed synthesis of the
+            most effective practices in education. By merging constructivist engagement,
+            inclusive equity, cognitive science, real-world relevance, and balanced technology,
+            it creates a robust, adaptable framework proven to cultivate critical thinkers,
+            ethical leaders, and lifelong learners.
+        </p>
+        <p style="font-style:italic;opacity:.88;">
+            "Good teaching cannot be reduced to technique; it comes from the identity and
+            integrity of the teacher." — Parker Palmer (1998, p. 10)
+        </p>
+    </div>
+</div>
+
+{% endblock %}

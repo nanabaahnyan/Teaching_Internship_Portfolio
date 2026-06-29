@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Reflective Practice — Portfolio{% endblock %}
+{% block page_title %}Reflective Practice{% endblock %}
+{% block page_subtitle %}Ongoing critical reflection on my teaching journey and professional growth{% endblock %}
+
+{% block header_actions %}
+    <!--  ⚠️ ADD your reflective journal PDF to: static/documents/reflective_journal.pdf  -->
+    <a href="{% static 'documents/reflective_journal.pdf' %}" download class="btn btn-primary btn-sm">
+        <i class="bi bi-download"></i> Download Journal
+    </a>
+{% endblock %}
+
+{% block content %}
+
+<!-- Intro -->
+<section class="philosophy-hero" style="background:linear-gradient(135deg,#059669 0%,var(--primary) 100%);margin-bottom:28px;">
+    <blockquote style="font-size:18px;">
+        "We do not learn from experience — we learn from reflecting on experience."
+    </blockquote>
+    <cite>— John Dewey &nbsp;|&nbsp; The cornerstone of my reflective practice</cite>
+</section>
+
+<!-- Framework -->
+<div class="card" style="margin-bottom:24px;">
+    <p class="section-title"><i class="bi bi-diagram-3" style="color:var(--primary);margin-right:8px;"></i>Reflective Framework Used</p>
+    <p style="font-size:14px;color:var(--text-secondary);line-height:1.8;margin-bottom:16px;">
+        My reflective practice is guided by <strong>Gibbs' Reflective Cycle (1988)</strong>,
+        which provides a structured framework for thinking critically about teaching experiences.
+        Each reflection follows the six stages below:
+    </p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;">
+
+        <div style="background:var(--bg-page);border-radius:var(--radius-md);padding:14px;text-align:center;border:1px solid var(--border);">
+            <div style="width:32px;height:32px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;margin:0 auto 8px;">1</div>
+            <p style="font-size:13px;font-weight:600;color:var(--text-primary);">Description</p>
+            <p style="font-size:11.5px;color:var(--text-secondary);margin-top:4px;">What happened?</p>
+        </div>
+
+        <div style="background:var(--bg-page);border-radius:var(--radius-md);padding:14px;text-align:center;border:1px solid var(--border);">
+            <div style="width:32px;height:32px;background:var(--accent-red);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;margin:0 auto 8px;">2</div>
+            <p style="font-size:13px;font-weight:600;color:var(--text-primary);">Feelings</p>
+            <p style="font-size:11.5px;color:var(--text-secondary);margin-top:4px;">What did you think &amp; feel?</p>
+        </div>
+
+        <div style="background:var(--bg-page);border-radius:var(--radius-md);padding:14px;text-align:center;border:1px solid var(--border);">
+            <div style="width:32px;height:32px;background:var(--accent-orange);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;margin:0 auto 8px;">3</div>
+            <p style="font-size:13px;font-weight:600;color:var(--text-primary);">Evaluation</p>
+            <p style="font-size:11.5px;color:var(--text-secondary);margin-top:4px;">What was good / bad?</p>
+        </div>
+
+        <div style="background:var(--bg-page);border-radius:var(--radius-md);padding:14px;text-align:center;border:1px solid var(--border);">
+            <div style="width:32px;height:32px;background:var(--accent-green);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;margin:0 auto 8px;">4</div>
+            <p style="font-size:13px;font-weight:600;color:var(--text-primary);">Analysis</p>
+            <p style="font-size:11.5px;color:var(--text-secondary);margin-top:4px;">Why did it happen?</p>
+        </div>
+
+        <div style="background:var(--bg-page);border-radius:var(--radius-md);padding:14px;text-align:center;border:1px solid var(--border);">
+            <div style="width:32px;height:32px;background:#7C3AED;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;margin:0 auto 8px;">5</div>
+            <p style="font-size:13px;font-weight:600;color:var(--text-primary);">Conclusion</p>
+            <p style="font-size:11.5px;color:var(--text-secondary);margin-top:4px;">What else could you have done?</p>
+        </div>
+
+        <div style="background:var(--bg-page);border-radius:var(--radius-md);padding:14px;text-align:center;border:1px solid var(--border);">
+            <div style="width:32px;height:32px;background:#0EA5E9;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;margin:0 auto 8px;">6</div>
+            <p style="font-size:13px;font-weight:600;color:var(--text-primary);">Action Plan</p>
+            <p style="font-size:11.5px;color:var(--text-secondary);margin-top:4px;">What will you do next time?</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- Reflection Entry 1 -->
+<div class="card doc-section" style="margin-bottom:20px;border-left:4px solid var(--primary);">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
+        <p class="section-title" style="margin:0;">
+            <i class="bi bi-journal-text" style="color:var(--primary);margin-right:8px;"></i>
+            Reflection
+        </p>
+        <span class="doc-meta-item"><i class="bi bi-calendar3"></i> [Date of lesson]</span>
+    </div>
+    <!--  ⚠️ Replace each section with your actual reflection  -->
+    <div class="doc-section"><h3>Description — What happened?</h3><p>[Describe the lesson or incident you are reflecting on. What topic did you teach? What happened in the classroom?]</p></div>
+    <div class="divider"></div>
+    <div class="doc-section"><h3>Feelings — What did you think and feel?</h3><p>[How did you feel before, during, and after the lesson? Were you confident, anxious, surprised?]</p></div>
+    <div class="divider"></div>
+    <div class="doc-section"><h3>Evaluation — What was good or bad?</h3><p>[Evaluate the experience — what went well, and what did not go as expected?]</p></div>
+    <div class="divider"></div>
+    <div class="doc-section"><h3>Analysis — Why did it happen?</h3><p>[Think more deeply — why did things go well or poorly? What theories or knowledge can you apply to understand this?]</p></div>
+    <div class="divider"></div>
+    <div class="doc-section"><h3>Conclusion — What else could you have done?</h3><p>[If you had the chance to redo this lesson, what would you change? What have you learned about yourself as a teacher?]</p></div>
+    <div class="divider"></div>
+    <div class="doc-section" style="margin-bottom:0;"><h3>Action Plan — What will you do next time?</h3><p>[Concrete steps you will take in future lessons based on this reflection.]</p></div>
+</div>
+
+<!-- Overall Reflection -->
+<div class="card">
+    <p class="section-title"><i class="bi bi-stars" style="color:var(--primary);margin-right:8px;"></i>Overall Internship Reflection</p>
+    <p style="font-size:14px;color:var(--text-secondary);line-height:1.85;">
+        <!--  ⚠️ Write your overall reflection on the internship as a whole  -->
+        [Write a comprehensive reflection on your entire internship experience.
+        Consider: How have you grown as a teacher? What were your greatest challenges?
+        What are you most proud of? How has this experience shaped your view of teaching
+        as a profession?]
+    </p>
+</div>
+
+{% endblock %}

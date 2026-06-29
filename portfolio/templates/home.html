@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home — Teaching Internship Portfolio{% endblock %}
+{% block page_title %}Hey, Welcomed{% endblock %}
+{% block page_subtitle %}Welcome to my Teaching Internship Portfolio{% endblock %}
+
+{% block header_actions %}
+    <a href="{% url 'portfolio:cv' %}" class="btn btn-primary btn-sm">
+        <i class="bi bi-person-vcard"></i> View My CV
+    </a>
+{% endblock %}
+
+{% block content %}
+
+<!-- ── Hero ── -->
+<section class="hero-section reveal">
+    <span class="hero-eyebrow">
+        <i class="bi bi-mortarboard-fill"></i>
+        Teaching Internship · 2026
+    </span>
+    <h1 class="hero-headline">
+        Building Tomorrow's Learners, One Lesson at a Time.
+    </h1>
+    <p class="hero-body">
+        Welcome to my professional teaching internship portfolio. This collection documents
+        my journey, lesson plans, teaching materials, reflective practice, and the impact
+        I have made during my internship placement.
+    </p>
+    <div class="hero-cta">
+        <a href="{% url 'portfolio:philosophy' %}" class="btn btn-hero-primary">
+            <i class="bi bi-lightbulb"></i> My Philosophy
+        </a>
+        <a href="{% url 'portfolio:gallery' %}" class="btn btn-hero-ghost">
+            <i class="bi bi-images"></i> View Gallery
+        </a>
+    </div>
+</section>
+
+<!-- ── Highlights Strip ── -->
+<div class="highlights-strip">
+    <div class="highlight-card reveal">
+        <div class="highlight-icon blue"><i class="bi bi-journal-text"></i></div>
+        <div>
+            <p class="highlight-label">Lesson Plans</p>
+            <p class="highlight-value">11+</p>
+            <p class="highlight-note">Delivered in two (2) terms</p>
+        </div>
+    </div>
+    <div class="highlight-card reveal">
+        <div class="highlight-icon red"><i class="bi bi-people"></i></div>
+        <div>
+            <p class="highlight-label">Students Taught</p>
+            <p class="highlight-value">300+</p>
+            <p class="highlight-note">Across multiple classes</p>
+        </div>
+    </div>
+    <div class="highlight-card reveal">
+        <div class="highlight-icon orange"><i class="bi bi-clipboard-check"></i></div>
+        <div>
+            <p class="highlight-label">Assessments</p>
+            <p class="highlight-value">12+</p>
+            <p class="highlight-note">Formative & summative</p>
+        </div>
+    </div>
+    <div class="highlight-card reveal">
+        <div class="highlight-icon green"><i class="bi bi-calendar3"></i></div>
+        <div>
+            <p class="highlight-label">Weeks of Practice</p>
+            <p class="highlight-value">20+</p>
+            <p class="highlight-note">Full placement duration</p>
+        </div>
+    </div>
+</div>
+
+<!-- ── Image Carousel ── -->
+<section class="carousel-section card reveal" style="padding:0; overflow:hidden;">
+    <div data-carousel class="carousel-wrapper">
+        <div class="carousel-track">
+
+            <!-- Slide 1 -->
+            <div class="carousel-slide">
+                <!--
+                    ADD YOUR IMAGE:  static/images/slide1.jpg
+                    Replace the placeholder div below with:
+                    <img src="{% static 'images/slide1.jpg' %}" alt="Classroom teaching">
+                -->
+                <img src="{% static '/images/Staff_ICT.jpg' %}" alt="Classroom teaching" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-slide">
+                <img src="{% static '/images/Practicals.jpg' %}" alt="Classroom teaching" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-slide">
+                <img src="{% static '/images/After_Dining.jpg' %}" alt="Teaching and Learning Material">
+            </div>
+
+        </div><!-- end track -->
+
+        <button class="carousel-btn prev" aria-label="Previous">
+            <i class="bi bi-chevron-left"></i>
+        </button>
+        <button class="carousel-btn next" aria-label="Next">
+            <i class="bi bi-chevron-right"></i>
+        </button>
+    </div>
+
+    <div class="carousel-dots" style="padding-bottom:16px;">
+        <button class="carousel-dot active" aria-label="Slide 1"></button>
+        <button class="carousel-dot"        aria-label="Slide 2"></button>
+        <button class="carousel-dot"        aria-label="Slide 3"></button>
+    </div>
+</section>
+
+<!-- ── About ── -->
+<div class="about-grid">
+    <div class="card reveal">
+        <p class="section-title"><i class="bi bi-person-circle" style="color:var(--primary);margin-right:8px;"></i>About the Intern</p>
+        <div class="about-text">
+            <p>
+                My name is <strong>Ezekiel Baah</strong>, a final-year BSc ICT Education
+                student at the University of Education, Winneba, majoring in Software Engineering
+                and Advanced Database Management Systems.
+            </p>
+            <p>
+                This portfolio captures my experiences, growth, and achievements during my
+                teaching internship at a Senior High School in Ghana — from planning lessons
+                to delivering engaging ICT instruction.
+            </p>
+            <p>
+                Beyond the classroom, I am the CEO of GALF Global Foundation and an active
+                software developer with hands-on experience in Django, Python, Java, C#, VB.NET, and data analysis.
+            </p>
+        </div>
+    </div>
+
+    <div class="card reveal">
+        <p class="section-title"><i class="bi bi-info-circle" style="color:var(--primary);margin-right:8px;"></i>Placement Details</p>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:4px;">
+            {% with items=placement_details %}
+            <div class="doc-meta-item" style="border-radius:8px;justify-content:flex-start;">
+                <i class="bi bi-building" style="color:var(--primary);"></i>
+                <div>
+                    <div style="font-size:11px;color:var(--text-light);text-transform:uppercase;letter-spacing:.5px;">School</div>
+                    <!--  ⚠️ REPLACE with actual school name -->
+                    <div style="font-size:13.5px;font-weight:600;color:var(--text-primary);">Baidoo Bonsoe Senior High Technical School</div>
+                </div>
+            </div>
+            <div class="doc-meta-item" style="border-radius:8px;justify-content:flex-start;">
+                <i class="bi bi-geo-alt" style="color:var(--primary);"></i>
+                <div>
+                    <div style="font-size:11px;color:var(--text-light);text-transform:uppercase;letter-spacing:.5px;">Location</div>
+                    <div style="font-size:13.5px;font-weight:600;color:var(--text-primary);">Western Region, Ghana</div>
+                </div>
+            </div>
+            <div class="doc-meta-item" style="border-radius:8px;justify-content:flex-start;">
+                <i class="bi bi-book" style="color:var(--primary);"></i>
+                <div>
+                    <div style="font-size:11px;color:var(--text-light);text-transform:uppercase;letter-spacing:.5px;">Subject(s) Taught</div>
+                    <div style="font-size:13.5px;font-weight:600;color:var(--text-primary);">Elective ICT</div>
+                </div>
+            </div>
+            <div class="doc-meta-item" style="border-radius:8px;justify-content:flex-start;">
+                <i class="bi bi-calendar-range" style="color:var(--primary);"></i>
+                <div>
+                    <div style="font-size:11px;color:var(--text-light);text-transform:uppercase;letter-spacing:.5px;">Duration</div>
+                    <div style="font-size:13.5px;font-weight:600;color:var(--text-primary);">November, 2025 – April, 2026</div>
+                </div>
+            </div>
+            {% endwith %}
+        </div>
+    </div>
+</div>
+
+<!-- ── Quick Links ── -->
+<div class="card reveal" style="margin-top:4px;">
+    <p class="section-title">Quick Navigation</p>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:4px;">
+        <a href="{% url 'portfolio:philosophy' %}" class="btn btn-outline btn-sm"><i class="bi bi-lightbulb"></i> Teaching Philosophy</a>
+        <a href="{% url 'portfolio:scheme' %}"     class="btn btn-outline btn-sm"><i class="bi bi-calendar3"></i> Scheme of Work</a>
+        <a href="{% url 'portfolio:lesson' %}"     class="btn btn-outline btn-sm"><i class="bi bi-journal-text"></i> Lesson Plan</a>
+        <a href="{% url 'portfolio:assessment' %}" class="btn btn-outline btn-sm"><i class="bi bi-clipboard-check"></i> Assessment</a>
+        <a href="{% url 'portfolio:tlm' %}"        class="btn btn-outline btn-sm"><i class="bi bi-box-seam"></i> TLMs</a>
+        <a href="{% url 'portfolio:reflective' %}" class="btn btn-outline btn-sm"><i class="bi bi-arrow-repeat"></i> Reflective Practice</a>
+        <a href="{% url 'portfolio:mentor' %}"     class="btn btn-outline btn-sm"><i class="bi bi-chat-square-quote"></i> Mentor Comment</a>
+        <a href="{% url 'portfolio:gallery' %}"    class="btn btn-outline btn-sm"><i class="bi bi-images"></i> Gallery</a>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .reveal { opacity:0; transform:translateY(22px); transition:opacity .5s ease, transform .5s ease; }
+    .revealed { opacity:1; transform:translateY(0); }
+</style>
+{% endblock %}

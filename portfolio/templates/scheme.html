@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Scheme of Work — Portfolio{% endblock %}
+{% block page_title %}Scheme of Work{% endblock %}
+{% block page_subtitle %}Planned weekly teaching schedule for the internship placement{% endblock %}
+
+
+{% block content %}
+
+<div class="doc-page-container">
+
+    <!-- Meta bar -->
+    <div class="doc-meta-bar">
+        <span class="doc-meta-item"><i class="bi bi-building"></i> Baidoo Bonsoe Senior High Technical School</span>
+        <span class="doc-meta-item"><i class="bi bi-book"></i> Elective ICT </span>
+        <span class="doc-meta-item"><i class="bi bi-people"></i> SHS 1</span>
+        <span class="doc-meta-item"><i class="bi bi-calendar3"></i> 1st Semester, 2025</span>
+        <span class="doc-meta-item"><i class="bi bi-person"></i> Ezekiel Baah</span>
+    </div>
+
+    <!-- Objectives -->
+    <div class="card doc-section" style="margin-bottom:24px;">
+        <div class="doc-section">
+            <h3>Overview & Objectives</h3>
+            <p style="margin-bottom:10px;">
+                This scheme of work outlines the planned teaching and learning activities for the
+                Elective ICT subject for SHS 1 first semester. It covers the scope and sequence of
+                topics to be taught, the methods to be used, resources required, and the
+                assessment approach for each week.
+            </p>
+            <ul>
+                <li>Align lessons with the GES ICT curriculum for Senior High School.</li>
+                <li>Ensure balanced coverage of theory and practical components.</li>
+                <li>Integrate diverse TLMs to cater for different learning styles.</li>
+                <li>Embed continuous formative assessment throughout.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Scheme Table -->
+    <div class="card" style="padding:0;overflow:hidden;">
+        <div style="padding:20px 24px 16px;border-bottom:1px solid var(--border);">
+            <p class="section-title" style="margin:0;">Weekly Scheme</p>
+        </div>
+        <div style="overflow-x:auto;">
+            <table class="scheme-table">
+                <thead>
+                    <tr>
+                        <th>Week</th>
+                        <th>Strand</th>
+                        <th>Sub-strand</th>
+                        <th>Content Standard (CS)</th>
+                        <th>Learning Outcome (LO)</th>
+                        <th>Learning Indicator (LI)</th>
+                        <th>Resources / TLMs</th>
+                        <th>Assessment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--
+                        ⚠️ REPLACE each row with your actual scheme of work content.
+                        Add as many rows as you need.
+                    -->
+                    <tr>
+                        <td><strong>1</strong></td>
+                        <td>ICTs In the Society</td>
+                        <td>Organizing, Managing and Presenting Information Using Essential Productivity Tools</td>
+                        <td>1.1.1.CS.1</td>
+                        <td>1.1.1.LO.1</td>
+                        <td>1.1.1.LI.1</td>
+                        <td>Laptop, Hard Drive, System Unit, Mouse, Keyboard, Flash Drive</td>
+                        <td>Oral Q&A</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2</strong></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1.1.1.LI.2</td>
+                        <td>Pen, Smartphone, Mouse, Laptop computers, Desktop computer, Productivity tools, Subject based application software, Instructional Laboratories (with multimedia equipment and smartboards) </td>
+                        <td>Group discussion, Hands-on Activities</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3</strong></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1.1.1.LI.3</td>
+                        <td>Notepad or exercise book, Pen, Smartphone, Laptop computers, Projector, Productivity tools (Microsoft Office Word 2016), Open Educational Resources (Including: YouTube, MOOCS Udemy/ Coursera, khan academy, TESSA) </td>
+                        <td>Quiz</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4</strong></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1.1.1.LI.4</td>
+                        <td>Smartphones, Laptop computers, Desktop computers, Projector, Productivity tools (Microsoft Office Word 2016) </td>
+                        <td>Observation and Practical Assessment</td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td><strong>5</strong></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1.1.1.LI.5</td>
+                        <td>Smartphones, Laptop computers, Desktop computers, Projector, Tablets, Productivity tools (Microsoft Office Word 2016), Open Educational Resources</td>
+                        <td>Quiz</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Download notice -->
+    <div class="download-bar">
+        <i class="bi bi-file-earmark-pdf-fill" style="color:var(--primary);font-size:18px;"></i>
+        <span>Preview or Download Full Scheme of Work PDF for SHS 1 1st Semester</span>
+        <a href="{% url 'portfolio:scheme_preview_FORM1' %}" target="_blank" class="btn btn-outline btn-sm">
+        <i class="bi bi-eye"></i> Preview Scheme
+        </a>
+        <a href="{% static 'documents/scheme_of_work.pdf' %}" download class="btn btn-primary btn-sm">
+            <i class="bi bi-download"></i> Download
+        </a>
+    </div>
+
+    <div class="download-bar">
+        <i class="bi bi-file-earmark-pdf-fill" style="color:var(--primary);font-size:18px;"></i>
+        <span>Preview or Download Full Scheme of Work PDF for SHS 2 1st Semester</span>
+        <a href="{% url 'portfolio:scheme_preview_FORM2' %}" target="_blank" class="btn btn-outline btn-sm">
+        <i class="bi bi-eye"></i> Preview Scheme
+        </a>
+        <a href="{% static 'documents/scheme_of_work.pdf' %}" download class="btn btn-primary btn-sm">
+            <i class="bi bi-download"></i> Download
+        </a>
+    </div>
+
+    <!-- Notes -->
+    <div class="card doc-section" style="margin-top:24px;">
+        <div class="doc-section">
+            <h3>Notes to this Scheme</h3>
+            <ul>
+                <li>Practical sessions will be conducted in the computer laboratory wherever applicable.</li>
+                <li>Assessment methods include oral Q&A, class exercises, and written tests.</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,320 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Gallery — Teaching Portfolio{% endblock %}
+{% block page_title %}Gallery{% endblock %}
+{% block page_subtitle %}A visual record of teaching activities, students, and internship moments{% endblock %}
+
+{% block content %}
+
+<!-- ── Image Carousel ── -->
+<section class="carousel-section card reveal" style="padding:0; overflow:hidden;">
+    <div data-carousel class="carousel-wrapper">
+        <div class="carousel-track">
+
+            <!-- Slide 1 -->
+            <div class="carousel-slide">
+                <img src="{% static '/images/Staff_ICT.jpg' %}" alt="Classroom teaching" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-slide">
+                <img src="{% static '/images/Practicals.jpg' %}" alt="Classroom teaching" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-slide">
+                <img src="{% static '/images/After_Dining.jpg' %}" alt="Teaching and Learning Material">
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="carousel-slide">
+                <img src="{% static '/images/After_meeting_with_headmaster.jpg' %}" alt="Teaching and Learning Material">
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="carousel-slide">
+                <img src="{% static '/images/Class.JPG' %}" alt="Teaching and Learning Material">
+            </div>
+
+            <!-- Slide 6 -->
+            <div class="carousel-slide">
+                <img src="{% static '/images/School Staff Meeting.JPG' %}" alt="Teaching and Learning Material">
+            </div>
+
+        </div>
+
+        <button class="carousel-btn prev" aria-label="Previous">
+            <i class="bi bi-chevron-left"></i>
+        </button>
+        <button class="carousel-btn next" aria-label="Next">
+            <i class="bi bi-chevron-right"></i>
+        </button>
+    </div>
+
+    <div class="carousel-dots" style="padding-bottom:16px;">
+        <button class="carousel-dot active" aria-label="Slide 1"></button>
+        <button class="carousel-dot"        aria-label="Slide 2"></button>
+        <button class="carousel-dot"        aria-label="Slide 3"></button>
+        <button class="carousel-dot"        aria-label="Slide 4"></button>
+        <button class="carousel-dot"        aria-label="Slide 5"></button>
+        <button class="carousel-dot"        aria-label="Slide 6"></button>
+    </div>
+</section>
+
+<!-- Intro & filter tabs -->
+<div class="card" style="margin-bottom:24px;padding:16px 24px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+        <p style="font-size:14px;color:var(--text-secondary);max-width:560px;">
+            A collection of photographs documenting key moments from my teaching internship —
+            from classroom activities and group work to TLM demonstrations and school events.
+        </p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;" id="galleryFilters">
+            <button class="btn btn-primary btn-sm filter-btn active" data-filter="all">All</button>
+            <button class="btn btn-ghost btn-sm filter-btn" data-filter="classroom">Classroom</button>
+            <button class="btn btn-ghost btn-sm filter-btn" data-filter="staff">Staff</button>
+            <button class="btn btn-ghost btn-sm filter-btn" data-filter="students">Students</button>
+            <button class="btn btn-ghost btn-sm filter-btn" data-filter="school">School</button>
+        </div>
+    </div>
+</div>
+
+<!-- Gallery Grid -->
+<div class="gallery-grid" id="galleryGrid">
+
+    <div class="gallery-item" data-lightbox data-src="{% static '/images/School Staff Meeting.JPG' %}" data-caption="" data-filter="staff">
+        <div class="img-placeholder" style="width:100%;height:100%;">
+              <img src="{% static '/images/School Staff Meeting.JPG' %}" alt="SHS 1 Class Exercise"
+                 style="width:100%;height:100%;object-fit:cover;
+                        transition:transform .4s ease;">
+        </div>
+        <div class="gallery-overlay">
+            <span class="gallery-caption">School Staff Meeting</span>
+        </div>
+    </div>
+
+    <div class="gallery-item" data-lightbox data-src="{% static '/images/Staff_ICT.jpg' %}" data-caption="" data-filter="staff">
+        <div class="img-placeholder" style="width:100%;height:100%;">
+            <img src="{% static '/images/Staff_ICT.jpg' %}" alt="Students working on a group task"
+                 style="width:100%;height:100%;object-fit:cover;
+                        transition:transform .4s ease;">
+        </div>
+        <div class="gallery-overlay">
+            <span class="gallery-caption">ICT Department Staff</span>
+        </div>
+    </div>
+
+    <div class="gallery-item" data-lightbox data-src="{% static '/images/Teaching.jpg' %}" data-caption="" data-filter="tlm">
+        <div class="img-placeholder" style="width:100%;height:100%;">
+            <img src="{% static '/images/Teaching.jpg' %}" alt="Facilitator Teaching"
+                 style="width:100%;height:100%;object-fit:cover;
+                        transition:transform .4s ease;">
+        </div>
+        <div class="gallery-overlay">
+            <span class="gallery-caption">In the course of teaching</span>
+        </div>
+    </div>
+
+    <div class="gallery-item" data-lightbox data-src="{% static '/images/Morning Assembly.JPG' %}" data-caption="" data-filter="tlm">
+        <div class="img-placeholder" style="width:100%;height:100%;">
+            <img src="{% static '/images/Morning Assembly.JPG' %}" alt="Morning Assembly"
+                 style="width:100%;height:100%;object-fit:cover;
+                        transition:transform .4s ease;">
+        </div>
+        <div class="gallery-overlay">
+            <span class="gallery-caption">Morning Assembly</span>
+        </div>
+    </div>
+
+    <div class="gallery-item" data-lightbox data-src="{% static '/images/PLC (2).JPG' %}" data-caption="" data-filter="tlm">
+        <div class="img-placeholder" style="width:100%;height:100%;">
+            <img src="{% static '/images/PLC (2).JPG' %}" alt="PLC Meeting"
+                 style="width:100%;height:100%;object-fit:cover;
+                        transition:transform .4s ease;">
+        </div>
+        <div class="gallery-overlay">
+            <span class="gallery-caption">PLC Meeting</span>
+        </div>
+    </div>
+
+    <div class="gallery-item" data-lightbox data-src="{% static '/images/Tablet_distribution2.JPG' %}" data-caption="" data-filter="tlm">
+        <div class="img-placeholder" style="width:100%;height:100%;">
+            <img src="{% static '/images/Tablet_distribution2.JPG' %}" alt="Tablet Distribution"
+                 style="width:100%;height:100%;object-fit:cover;
+                        transition:transform .4s ease;">
+        </div>
+        <div class="gallery-overlay">
+            <span class="gallery-caption">Tablet Distribution</span>
+        </div>
+    </div>
+
+    <div class="gallery-item" data-lightbox data-src="{% static '/images/Practicals.jpg' %}" data-caption="" data-filter="tlm">
+        <div class="img-placeholder" style="width:100%;height:100%;">
+            <img src="{% static '/images/Practicals.jpg' %}" alt="Practicals"
+                 style="width:100%;height:100%;object-fit:cover;
+                        transition:transform .4s ease;">
+        </div>
+        <div class="gallery-overlay">
+            <span class="gallery-caption">ICT Practicals</span>
+        </div>
+    </div>
+
+    <div class="gallery-item" data-lightbox data-src="{% static '/images/Sports_ICT.jpg' %}" data-caption="" data-filter="tlm">
+        <div class="img-placeholder" style="width:100%;height:100%;">
+            <img src="{% static '/images/Sports_ICT.jpg' %}" alt="Watching Sporting games with Staff"
+                 style="width:100%;height:100%;object-fit:cover;
+                        transition:transform .4s ease;">
+        </div>
+        <div class="gallery-overlay">
+            <span class="gallery-caption">Watching Sporting games with Staff</span>
+        </div>
+    </div>
+
+    <div class="gallery-item" data-lightbox data-src="{% static '/images/Sport_with_mentor.JPG' %}" data-caption="" data-filter="tlm">
+        <div class="img-placeholder" style="width:100%;height:100%;">
+            <img src="{% static '/images/Sport_with_mentor.JPG' %}" alt="Sport with Mentor"
+                 style="width:100%;height:100%;object-fit:cover;
+                        transition:transform .4s ease;">
+        </div>
+        <div class="gallery-overlay">
+            <span class="gallery-caption">Sport with Mentor</span>
+        </div>
+    </div>
+
+    <div class="gallery-item" data-lightbox data-src="{% static '/images/Dining.JPG' %}" data-caption="" data-filter="tlm">
+        <div class="img-placeholder" style="width:100%;height:100%;">
+            <img src="{% static '/images/Dining.JPG' %}" alt="Dining"
+                 style="width:100%;height:100%;object-fit:cover;
+                        transition:transform .4s ease;">
+        </div>
+        <div class="gallery-overlay">
+            <span class="gallery-caption">Dining Time with Students</span>
+        </div>
+    </div>
+
+    <div class="gallery-item" data-lightbox data-src="{% static '/images/After_Dining.jpg' %}" data-caption="" data-filter="tlm">
+        <div class="img-placeholder" style="width:100%;height:100%;">
+            <img src="{% static '/images/After_Dining.jpg' %}" alt="After Dining"
+                 style="width:100%;height:100%;object-fit:cover;
+                        transition:transform .4s ease;">
+        </div>
+        <div class="gallery-overlay">
+            <span class="gallery-caption">Picture with students after Dining</span>
+        </div>
+    </div>
+
+    <div class="gallery-item" data-lightbox data-src="{% static '/images/After_meeting_with_headmaster.jpg' %}" data-caption="" data-filter="tlm">
+        <div class="img-placeholder" style="width:100%;height:100%;">
+            <img src="{% static '/images/After_meeting_with_headmaster.jpg' %}" alt="After Meeting with Headmaster"
+                 style="width:100%;height:100%;object-fit:cover;
+                        transition:transform .4s ease;">
+        </div>
+        <div class="gallery-overlay">
+            <span class="gallery-caption">Picture with Interns and NSS personnel</span>
+        </div>
+    </div>
+
+    <div class="gallery-item" data-lightbox data-src="{% static '/images/Closing_assembly_Sports.JPG' %}" data-caption="" data-filter="tlm">
+        <div class="img-placeholder" style="width:100%;height:100%;">
+            <img src="{% static '/images/Closing_assembly_Sports.JPG' %}" alt="Sports Closing Assembly"
+                 style="width:100%;height:100%;object-fit:cover;
+                        transition:transform .4s ease;">
+        </div>
+        <div class="gallery-overlay">
+            <span class="gallery-caption">A picture with my affiliated House during the Sports Closing Assembly</span>
+        </div>
+    </div>
+
+    <div class="gallery-item" data-lightbox data-src="{% static '/images/Battons running.JPG' %}" data-caption="" data-filter="tlm">
+        <div class="img-placeholder" style="width:100%;height:100%;">
+            <img src="{% static '/images/Battons running.JPG' %}" alt="Athletics"
+                 style="width:100%;height:100%;object-fit:cover;
+                        transition:transform .4s ease;">
+        </div>
+        <div class="gallery-overlay">
+            <span class="gallery-caption">Officiating athletics (Batons)</span>
+        </div>
+    </div>
+
+    <div class="gallery-item" data-lightbox data-src="{% static '/images/Panelist_Sports.jpg' %}" data-caption="" data-filter="tlm">
+        <div class="img-placeholder" style="width:100%;height:100%;">
+            <img src="{% static '/images/Panelist_Sports.jpg' %}" alt="Panelist at Sports Event"
+                 style="width:100%;height:100%;object-fit:cover;
+                        transition:transform .4s ease;">
+        </div>
+        <div class="gallery-overlay">
+            <span class="gallery-caption">Panelist at Sports Event</span>
+        </div>
+    </div>
+
+    <div class="gallery-item" data-lightbox data-src="{% static '/images/Verification_Form3.jpg' %}" data-caption="" data-filter="tlm">
+        <div class="img-placeholder" style="width:100%;height:100%;">
+            <img src="{% static '/images/Verification_Form3.jpg' %}" alt="Verification Form"
+                 style="width:100%;height:100%;object-fit:cover;
+                        transition:transform .4s ease;">
+        </div>
+        <div class="gallery-overlay">
+            <span class="gallery-caption">WASCE Verification for SHS 3 students</span>
+        </div>
+    </div>
+
+    <div class="gallery-item" data-lightbox data-src="{% static '/images/Class.JPG' %}" data-caption="" data-filter="tlm">
+        <div class="img-placeholder" style="width:100%;height:100%;">
+            <img src="{% static '/images/Class.JPG' %}" alt="Classroom"
+                 style="width:100%;height:100%;object-fit:cover;
+                        transition:transform .4s ease;">
+        </div>
+        <div class="gallery-overlay">
+            <span class="gallery-caption">During lesson delivery</span>
+        </div>
+    </div>
+
+    <div class="gallery-item" data-lightbox data-src="{% static '/images/After Lesson.JPG' %}" data-caption="" data-filter="tlm">
+        <div class="img-placeholder" style="width:100%;height:100%;">
+            <img src="{% static '/images/After Lesson.JPG' %}" alt="After Lesson"
+                 style="width:100%;height:100%;object-fit:cover;
+                        transition:transform .4s ease;">
+        </div>
+        <div class="gallery-overlay">
+            <span class="gallery-caption">After Lesson</span>
+        </div>
+    </div>
+
+</div><!-- end gallery-grid -->
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+    <img src="" alt="Gallery image" id="lightboxImg">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    /* Gallery filter */
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => {
+                b.classList.remove('active', 'btn-primary');
+                b.classList.add('btn-ghost');
+            });
+            btn.classList.add('active', 'btn-primary');
+            btn.classList.remove('btn-ghost');
+
+            const filter = btn.dataset.filter;
+            galleryItems.forEach(item => {
+                if (filter === 'all' || item.dataset.filter === filter) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <style>
+        .lightbox-caption {
+            max-width: 600px;
+            text-align: center;
+            white-space: normal;     /* allow text to wrap */
+            line-height: 1.6;
+            font-size: 13.5px;
+        }
+    </style>
+{% endblock %}
+
+{% block title %}TLMs — Teaching Portfolio{% endblock %}
+{% block page_title %}Teaching &amp; Learning Materials{% endblock %}
+{% block page_subtitle %}Resources and materials designed and used during the internship{% endblock %}
+
+{% block content %}
+
+<!-- Intro -->
+<div class="card" style="margin-bottom:24px;">
+    <p class="section-title"><i class="bi bi-box-seam" style="color:var(--primary);margin-right:8px;"></i>About My TLMs</p>
+    <p style="font-size:14px;color:var(--text-secondary);line-height:1.8;max-width:760px;">
+        Teaching and Learning Materials (TLMs) are an essential part of effective instruction.
+        During my internship, I designed and used a variety of materials  to make abstract ICT concepts concrete, engaging, and accessible for all learners.
+        Below is a showcase of the key TLMs I developed, accessed, and used.
+    </p>
+</div>
+
+<!-- TLM Grid -->
+<div class="tlm-grid">
+
+    <!-- TLM Card 1 -->
+    <div class="tlm-card">
+        <div class="tlm-img-wrap" data-lightbox data-src="{% static '/images/projector.jpg' %}"
+            data-caption="Computer Hardware Chart — A large labelled diagram..."
+            style="cursor:pointer;">
+
+            <div class="tlm-img-wrap">
+                <img src="{% static '/images/projector.jpg' %}" alt="Projector" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+        </div>
+        <div class="tlm-card-body">
+            <p class="tlm-card-title">Projector</p>
+            <p class="tlm-card-desc">
+                I used the projector to display large-scale digital content, such as high-definition videos, images and presentation slides. This modernizes teaching by accommodating 
+                different learning styles and significantly boosting classroom interaction 
+            </p>
+            <span class="tlm-tag">Visual Aid</span>
+        </div>
+    </div>
+
+    <!-- TLM Card 2 -->
+    <div class="tlm-card">
+        <div class="tlm-img-wrap" data-lightbox data-src="{% static '/images/personal_laptop.jpg' %}"
+            data-caption="Personal Computer - I used it for my lesson plan preparation, powerpoint presentation, and teaching"
+            style="cursor:pointer;">
+            <div class="tlm-img-wrap">
+                <img src="{% static '/images/personal_laptop.jpg' %}" alt="Projector" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+        </div>
+        <div class="tlm-card-body">
+            <p class="tlm-card-title">Personal Laptop</p>
+            <p class="tlm-card-desc">
+                I used this TLM in lesson preparation and delivery, slide preparation, and online classes.
+            </p>
+            <span class="tlm-tag">Device</span>
+        </div>
+    </div>
+
+    <!-- TLM Card 3 -->
+    <div class="tlm-card">
+        <div class="tlm-img-wrap" data-lightbox data-src="{% static '/images/microsoft_office.png' %}"
+            data-caption="Microsoft Office Suite"
+            style="cursor:pointer;">
+            <div class="tlm-img-wrap">
+                <img src="{% static '/images/microsoft_office.png' %}" alt="Microsoft Office Suite" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+        </div>
+        <div class="tlm-card-body">
+            <p class="tlm-card-title">Microsoft Office Suite</p>
+            <p class="tlm-card-desc">
+                In the concepts of using productivity softwares, Microsoft Office Suite was chosen as the go to softwares for 
+                learning Word Processing, Spreadsheet, Presentation Design and so on.
+            </p>
+            <span class="tlm-tag">Productivity Softwares</span>
+        </div>
+    </div>
+
+    <!-- TLM Card 4 -->
+    <div class="tlm-card">
+        <div class="tlm-img-wrap" data-lightbox data-src="{% static 'images/TLM_1.jpg' %}"
+            data-caption="A projector used to display content"
+            style="cursor:pointer;">
+            <div class="img-placeholder" style="width:100%;height:100%;">
+                <div class="tlm-img-wrap">
+                    <img src="{% static '/images/TLM_1.jpg' %}" alt="Projector" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+            </div>
+        </div>
+        <div class="tlm-card-body">
+            <p class="tlm-card-title">Printed Handout</p>
+            <p class="tlm-card-desc">
+                This handout outlines the steps used in creating and using functions in Microsoft Excel.
+            </p>
+            <span class="tlm-tag">Printed Material</span>
+        </div>
+    </div>
+
+    <!-- TLM Card 5 -->
+    <div class="tlm-card">
+        <div class="tlm-img-wrap" data-lightbox data-src="{% static '/images/system_unit.jpg' %}"
+            data-caption="System Unit"
+            style="cursor:pointer;">
+            <div class="img-placeholder" style="width:100%;height:100%;">
+                <div class="tlm-img-wrap">
+                    <img src="{% static '/images/system_unit.jpg' %}" alt="System Unit" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+            </div>
+        </div>
+        <div class="tlm-card-body">
+            <p class="tlm-card-title">System Unit</p>
+            <p class="tlm-card-desc">
+                In the course of Teaching Computer Hardware and Software, i 
+                taught my student the part of the system unit, disassembled a system unit and looked at it internal hardware components.
+            </p>
+            <span class="tlm-tag">Device</span>
+        </div>
+    </div>
+
+    <!-- TLM Card 6 -->
+    <div class="tlm-card">
+        <div class="tlm-img-wrap" data-lightbox data-src="{% static '/images/keyboard.jpg' %}"
+            data-caption="System Unit"
+            style="cursor:pointer;">
+            <div class="img-placeholder" style="width:100%;height:100%;">
+                <div class="tlm-img-wrap">
+                    <img src="{% static '/images/keyboard.jpg' %}" alt="System Unit" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+            </div>
+        </div>
+        <div class="tlm-card-body">
+            <p class="tlm-card-title">Keyboard</p>
+            <p class="tlm-card-desc">A device used in my teaching and learning process as a tool for practicals and labelling</p>
+            <span class="tlm-tag">Device</span>
+        </div>
+    </div>
+
+</div>
+
+<!-- Reflection on TLMs -->
+<div class="card" style="margin-top:28px;">
+    <p class="section-title"><i class="bi bi-chat-left-quote" style="color:var(--primary);margin-right:8px;"></i>Reflection on TLM Usage</p>
+    <p style="font-size:14px;color:var(--text-secondary);line-height:1.8;">
+        The process of designing and utilizing these TLMs was a pivotal part of my teaching internship, bridging the gap 
+        between theoretical knowledge and practical classroom application. I found that a blended approach—combining digital, 
+        visual, and tactile materials—was the most effective strategy for catering to the diverse learning styles of my students.
+    </p>
+</div>
+
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Close">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <img src="" alt="TLM image" id="lightboxImg">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+{% endblock %}

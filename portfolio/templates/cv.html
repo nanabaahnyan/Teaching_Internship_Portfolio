@@ -1,0 +1,235 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Curriculum Vitae — Teaching Portfolio{% endblock %}
+{% block page_title %}Curriculum Vitae{% endblock %}
+{% block page_subtitle %}Academic and professional background of the teaching intern{% endblock %}
+
+{% block header_actions %}
+    <!--
+        ⚠️ ADD YOUR CV PDF to:  static/documents/cv.pdf
+        Then this download button will work.
+    -->
+    <a href="{% url 'portfolio:cv_preview' %}" target="_blank" class="btn btn-outline btn-sm">
+        <i class="bi bi-eye"></i> Preview CV
+    </a>
+    <a href="{% static '/documents/EZEKIEL_BAAH_CV.pdf' %}" download class="btn btn-primary btn-sm">
+        <i class="bi bi-download"></i> Download CV
+    </a>
+{% endblock %}
+
+{% block content %}
+
+<div class="cv-container">
+
+    <!-- ── CV Header Card ── -->
+    <div class="cv-header-card">
+        <div class="cv-avatar">
+            <!--
+                ⚠️ ADD your passport photo:  static/images/profile.jpg
+                Replace the icon below with:
+            -->
+            <img src="{% static 'images/Profile.jpg' %}" alt="Ezekiel Baah">
+
+        </div>
+        <div>
+            <p class="cv-name">Ezekiel Baah</p>
+            <p class="cv-role">BSc ICT Education — Teaching Intern · University of Education, Winneba</p>
+            <div class="cv-contact">
+                <span><i class="bi bi-envelope-fill"></i> ezekielbaah.nabstechitafric@email.com</span>
+                <span><i class="bi bi-telephone-fill"></i> +233 53 665 9245</span>
+                <span><i class="bi bi-geo-alt-fill"></i> Ghana</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Personal Summary ── -->
+    <div class="card cv-section">
+        <p class="cv-section-title">Personal Summary</p>
+        <p style="font-size:14px;color:var(--text-secondary);line-height:1.8;">
+            A highly motivated and result-oriented final-year BSc ICT Education student at the University
+            of Education, Winneba, with a strong academic record (Best Level 200 Student of the Year 2024)
+            and practical experience in software engineering, data analysis, AI Engineering and classroom instruction.
+            Passionate about leveraging technology to transform teaching and learning, with demonstrated
+            leadership as CEO of GALF Global Foundation, IBM Bob Edition Hackathons and hands-on experience as an MIS Personnel.
+        </p>
+    </div>
+
+    <!-- ── Education ── -->
+    <div class="card cv-section">
+        <p class="cv-section-title">Education</p>
+
+        <div class="cv-entry">
+            <div class="cv-entry-header">
+                <div>
+                    <p class="cv-entry-title">BSc ICT Education</p>
+                    <p class="cv-entry-org">University of Education, Winneba (UEW)</p>
+                </div>
+                <span class="cv-entry-date">2022 – 2026 (Expected Nov 2026)</span>
+            </div>
+            <p class="cv-entry-body">
+                Majoring in Software Engineering and Advanced Database Management Systems.
+                Awarded <strong>Best Level 200 Student of the Year 2024</strong>.
+            </p>
+        </div>
+
+        <div class="divider" style="margin:16px 0;"></div>
+
+        <div class="cv-entry">
+            <div class="cv-entry-header">
+                <div>
+                    <p class="cv-entry-title">Senior High School Certificate</p>
+                    <!-- ⚠️ Replace with your actual SHS -->
+                    <p class="cv-entry-org">St. John's Boys - Sekondi</p>
+                </div>
+                <span class="cv-entry-date">2019 – 2021</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Teaching Experience ── -->
+    <div class="card cv-section">
+        <p class="cv-section-title">Teaching Experience</p>
+
+        <div class="cv-entry">
+            <div class="cv-entry-header">
+                <div>
+                    <p class="cv-entry-title">Teaching Intern — ICT / Computing</p>
+                    <!-- ⚠️ Replace with the actual school name -->
+                    <p class="cv-entry-org">Baidoo Bonsoe Senior High Technical School, Ghana</p>
+                </div>
+                <span class="cv-entry-date">November, 2025 – April, 2026</span>
+            </div>
+            <p class="cv-entry-body">
+                Planned and delivered ICT lessons to Senior High School students across multiple classes.
+                Designed schemes of work, lesson plans, and formative assessments aligned with the
+                Ghana Education Service (GES) curriculum. Produced and used various Teaching and
+                Learning Materials (TLMs) to enhance understanding. Maintained a reflective journal
+                and received feedback from mentor/supervising teachers throughout the placement.
+            </p>
+        </div>
+    </div>
+
+    <!-- ── Work Experience ── -->
+    <div class="card cv-section">
+        <p class="cv-section-title">Work Experience</p>
+
+        <div class="cv-entry">
+            <div class="cv-entry-header">
+                <div>
+                    <p class="cv-entry-title">CEO / Founder</p>
+                    <p class="cv-entry-org">GALF Global Foundation</p>
+                </div>
+                <span class="cv-entry-date">Present</span>
+            </div>
+            <p class="cv-entry-body">
+                Leading organisational strategy, operations, and community development initiatives
+                at GALF Global Foundation.
+            </p>
+        </div>
+
+        <div class="divider" style="margin:16px 0;"></div>
+
+        <div class="cv-entry">
+            <div class="cv-entry-header">
+                <div>
+                    <p class="cv-entry-title">MIS Personnel</p>
+                    <p class="cv-entry-org">Ahanta West Municipal Assembly — Ministry of Agriculture</p>
+                </div>
+                <span class="cv-entry-date">2024</span>
+            </div>
+            <p class="cv-entry-body">
+                Managed and maintained the Management Information System (MIS) for the municipal
+                assembly. Supported data collection, analysis, and reporting functions for
+                agricultural activities across the district.
+            </p>
+        </div>
+    </div>
+
+    <!-- ── Key Projects ── -->
+    <div class="card cv-section">
+        <p class="cv-section-title">Key Projects</p>
+
+        <div class="cv-entry">
+            <div class="cv-entry-header">
+                <div>
+                    <p class="cv-entry-title">AfriSolve Hub</p>
+                    <p class="cv-entry-org">Django-based Problem Marketplace (ICTE 481)</p>
+                </div>
+                <span class="cv-entry-date">2026</span>
+            </div>
+            <p class="cv-entry-body">
+                A web application that connects problem posters with developers via escrow payments
+                (Paystack), Ghana Card KYC verification, real-time per-problem chat, Cloudinary file
+                storage, and a comprehensive admin dashboard.
+            </p>
+        </div>
+
+        <div class="divider" style="margin:16px 0;"></div>
+
+        <div class="cv-entry">
+            <div class="cv-entry-header">
+                <div>
+                    <p class="cv-entry-title">Data Analysis Projects</p>
+                    <p class="cv-entry-org">Self-directed / Academic</p>
+                </div>
+                <span class="cv-entry-date">Ongoing</span>
+            </div>
+            <p class="cv-entry-body">
+                Multiple data analysis and visualisation projects using Python, Power BI, PostgreSQL,
+                and SQL — including dashboards for agricultural and educational datasets.
+            </p>
+        </div>
+    </div>
+
+    <!-- ── Skills ── -->
+    <div class="card cv-section">
+        <p class="cv-section-title">Technical Skills</p>
+        <div class="cv-skills-grid">
+            <span class="skill-tag">AI Engineering</span>
+            <span class="skill-tag">Software Engineering</span>
+            <span class="skill-tag">Data Analysis</span>
+            <span class="skill-tag">Database Design and Management</span>
+            <span class="skill-tag">Microsoft Office Suite</span>
+        </div>
+
+        <div class="divider" style="margin:20px 0 16px;"></div>
+        <p class="cv-section-title">Teaching Skills</p>
+        <div class="cv-skills-grid">
+            <span class="skill-tag">Lesson Planning</span>
+            <span class="skill-tag">Curriculum Design</span>
+            <span class="skill-tag">Formative Assessment</span>
+            <span class="skill-tag">TLM Development</span>
+            <span class="skill-tag">Classroom Management</span>
+            <span class="skill-tag">Reflective Practice</span>
+            <span class="skill-tag">GES Curriculum</span>
+            <span class="skill-tag">ICT Integration</span>
+        </div>
+    </div>
+
+    <!-- ── Referees ── -->
+    <div class="card cv-section">
+        <p class="cv-section-title">Referees</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
+            <div style="padding:16px;background:var(--bg-page);border-radius:var(--radius-md);">
+                <!-- ⚠️ Replace with actual supervisor details -->
+                <p style="font-weight:700;font-size:13.5px;color:var(--text-primary);">Dr. Daniel Danso Essel</p>
+                <p style="font-size:12.5px;color:var(--text-secondary);margin-top:3px;">Lecturer, ICTE — UEW</p>
+                <p style="font-size:12px;color:var(--text-light);margin-top:4px;">[Contact on request]</p>
+            </div>
+            <div style="padding:16px;background:var(--bg-page);border-radius:var(--radius-md);">
+                <p style="font-weight:700;font-size:13.5px;color:var(--text-primary);">Madam Rebecca Adu-Gyamfi</p>
+                <p style="font-size:12.5px;color:var(--text-secondary);margin-top:3px;">Baidoo Bonsoe Senior High Technical School, Ghana</p>
+                <p style="font-size:12px;color:var(--text-light);margin-top:4px;">[Contact on request]</p>
+            </div>
+                <div style="padding:16px;background:var(--bg-page);border-radius:var(--radius-md);">
+                <p style="font-weight:700;font-size:13.5px;color:var(--text-primary);">Mr. Dennis Adjei Antwi - Director</p>
+                <p style="font-size:12.5px;color:var(--text-secondary);margin-top:3px;">Ministry of Food and Agriculture, Ghana</p>
+                <p style="font-size:12px;color:var(--text-light);margin-top:4px;">[Contact on request]</p>
+            </div>
+        </div>
+    </div>
+
+</div><!-- end cv-container -->
+
+{% endblock %}

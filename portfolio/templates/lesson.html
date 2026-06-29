@@ -1,0 +1,211 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Lesson Plan — Portfolio{% endblock %}
+{% block page_title %}Lesson Plan{% endblock %}
+{% block page_subtitle %}Detailed plan for a selected lesson delivered during the internship{% endblock %}
+{% block header_actions %}
+    <!--
+        ⚠️ ADD YOUR CV PDF to:  static/documents/cv.pdf
+        Then this download button will work.
+    -->
+    <a href="{% url 'portfolio:lesson_preview_SHS1' %}" target="_blank" class="btn btn-outline btn-sm">
+        <i class="bi bi-eye"></i> SHS 1 Preview
+    </a>
+    <a href="{% url 'portfolio:lesson_preview_SHS2' %}" target="_blank" class="btn btn-outline btn-sm">
+        <i class="bi bi-eye"></i> SHS 2 Preview
+    </a>
+{% endblock %}
+
+{% block content %}
+
+<div class="doc-page-container">
+
+    <!-- Download notice -->
+    <div class="download-bar">
+        <i class="bi bi-file-earmark-pdf-fill" style="color:var(--primary);font-size:18px;"></i>
+        <span>A full PDF version of the Lesson Plan for SHS 1 and SHS 2 is available for preview above.</span><br>
+    </div>
+
+    <!-- Meta Bar -->
+    <div class="doc-meta-bar">
+        <span class="doc-meta-item"><i class="bi bi-person"></i> Ezekiel Baah</span>
+        <span class="doc-meta-item"><i class="bi bi-building"></i> Baidoo Bonsoe Senior High Technical School</span>
+        <span class="doc-meta-item"><i class="bi bi-book"></i> Elective ICT </span>
+        <span class="doc-meta-item"><i class="bi bi-people"></i> SHS 2 / 2 General Art 2</span>
+        <span class="doc-meta-item"><i class="bi bi-clock"></i> 60 mins </span>
+        <span class="doc-meta-item"><i class="bi bi-calendar3"></i> 20th January, 2026</span>
+    </div>
+
+    <!-- Section 1: Topic & Objectives -->
+    <div class="card doc-section">
+        <div class="doc-section">
+            <h3>Topic: Formula in Excel</h3>
+        </div>
+        <div class="divider"></div>
+        <div class="doc-section">
+            <h3>Learning Objectives</h3>
+            <p>By the end of this lesson, students should be able to:</p>
+            <ol style="padding-left:20px;list-style:decimal;margin-top:8px;">
+                <!-- ⚠️ Replace with your actual objectives (use Bloom's verbs) -->
+                <li>Define and create basic formulas in Excel</li>
+                <li>Use aggregate functions like SUM, AVERAGE, COUNT to perform calculations in Excel</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Section 2: Teaching & Learning Activities -->
+    <div class="card doc-section">
+        <p class="section-title" style="margin-bottom:20px;">Teaching &amp; Learning Activities</p>
+
+        <!-- Starter -->
+        <div class="doc-section">
+            <h3>Starter <span style="font-weight:400;color:var(--text-light);font-size:12px;">10 mins</span></h3>
+            <p>
+                <b>Brainstorming</b>: <br>
+                Why is it better to use a formula instead of adding numbers manually
+            </p>
+        </div>
+
+        <div class="divider"></div>
+            </p>
+            <table class="scheme-table">
+                <thead>
+                    <tr>
+                        <th>Teacher Activity</th>
+                        <th>Student Activity</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <b>Introductory Activity</b><br>
+                            <ul>
+                                <li>Discuss automation benefits (accuracy, speed); project formula bar.</li>
+                                <li>Demonstrate MIN/MAX on marks data.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <br>
+                            <ul>
+                                <li>Note "=" symbol and basic syntax.</li>
+                                <li>Enter data and apply functions.</li>
+                            </ul>
+                        </td>
+                        <td>15 mins</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Activity 1</b><br>
+                            <ul>
+                                <b><u>Demonstrate:</u></b><br>
+                                <li>Simple formula (e.g., =A1+B1), then SUM (=SUM(B2:B10)).</li> <br>
+                                <b><u>Guide practical:</u></b><br>
+                                <li>Apply MIN/MAX to class marks.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <br>
+                            <ul>
+                                <li>Practice on provided marks dataset.</li>
+                                <li>Follow and replicate steps.</li>
+                            </ul>
+                        </td>
+                        <td>15 mins</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Activity 2</b><br>
+                            <ul>
+                                <li>Demonstration on basic functions and AutoFill.</li>
+                                <li>Group discussion: Create simple family budget sheet..</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <br>
+                            <ul>
+                                <li>Watch and replicate steps.</li>
+                                <li>Collaborate and apply functions.</li>
+                            </ul>
+                        </td>
+                        <td>15 mins</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Closure -->
+        <div class="doc-section">
+            <h3>Lesson Closure <span style="font-weight:400;color:var(--text-light);font-size:12px;">5 mins</span></h3>
+            <p>
+                <ul>
+                    <b>Recap:</b><br>
+                    <li>How does SUM promote responsibility in data handling</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+
+    <!-- Section 3: Resources & Assessment -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+
+        <div class="card doc-section">
+            <div class="doc-section">
+                <h3>Teaching &amp; Learning Resources</h3>
+                <ul>
+                    <li>Textbook: Elective ICT Manual</li>
+                    <li>Whiteboard</li>
+                    <li>Projector</li>
+                    <li>Laptop</li>
+                    <li>TLM 1 — Printed handout</li>
+                    <li>MS Excel</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card doc-section">
+            <div class="doc-section">
+                <h3>Assessment Strategy</h3>
+                <ul>
+                    <li><strong>Oral Q&A:</strong> Teacher ask students questions and they answer. Students aak questions and the class or teacher answer.</li>
+                    <li><strong>Observation:</strong> Monitor group work participation</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Section 4: Evaluation & Remarks -->
+    <div class="card doc-section" style="margin-top:24px;border-left:4px solid var(--primary);">
+        <div class="doc-section">
+            <h3>Post-Lesson Evaluation</h3>
+            <p style="margin-bottom:10px;">
+                <b><u>Reflection:</u></b><br>
+                <ul>
+                    <li>Learners proud of using excel to that level.</li>
+                    <li>Formulas in Excel understood well.</li>
+                    <li>Some groups had errors in writing formulas.</li>
+                </ul>
+
+                <b><u>Remarks:</u></b><br>
+                <ul>
+                    <li>Lesson objectives are largely achieved. Students were able to create formulas and use basic functions in Excel. More practice is needed for complex formulas.</li>
+                </ul>
+                
+            </p>
+        </div>
+        <div class="divider"></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px;">
+            <div>
+                <p style="font-size:12px;color:var(--text-light);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;">Mentor Signature</p>
+                <div style="border-bottom:1px solid var(--border);min-height:36px;"></div>
+                <p style="font-size:12px;color:var(--text-secondary);margin-top:6px;">[Supervisor Name] &nbsp;|&nbsp; 16th February, 2026</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

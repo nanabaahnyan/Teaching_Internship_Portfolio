@@ -1,0 +1,204 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <style>
+        .lightbox-caption {
+            max-width: 600px;
+            text-align: center;
+            white-space: normal;     /* allow text to wrap */
+            line-height: 1.6;
+            font-size: 13.5px;
+        }
+    </style>
+{% endblock %}
+
+{% block title %}Assessment — Portfolio{% endblock %}
+{% block page_title %}Assessment{% endblock %}
+{% block page_subtitle %}Formative and summative assessment tools used during the internship{% endblock %}
+
+
+{% block content %}
+
+
+
+    <!-- Meta Bar -->
+    <div class="doc-meta-bar">
+        <span class="doc-meta-item"><i class="bi bi-building"></i> Baidoo Bonsoe Senior High Technical School</span>
+        <span class="doc-meta-item"><i class="bi bi-book"></i> Elective ICT</span>
+        <span class="doc-meta-item"><i class="bi bi-people"></i> SHS 1 and 2</span>
+        <span class="doc-meta-item"><i class="bi bi-person"></i> Ezekiel Baah</span>
+        <span class="doc-meta-item"><i class="bi bi-calendar3"></i> November, 2025 - April, 2026</span>
+    </div>
+
+    <!-- Overview -->
+    <div class="card doc-section" style="margin-bottom:24px;">
+        <div class="doc-section">
+            <h3>Assessment Overview</h3>
+            <p>
+                Assessment is an integral part of my teaching practice. I use a blend of
+                formative and summative approaches to monitor learning progress, identify gaps,
+                and provide timely feedback. The instruments presented here were designed and
+                administered during my internship placement.
+            </p>
+        </div>
+    </div>
+
+    <!-- Assessment Grid -->
+    <div class="tlm-grid">
+
+        <!-- Assessment Card 1 -->
+        <div class="tlm-card">
+            <div class="tlm-img-wrap" data-lightbox data-src="{% static '/images/SHS2_Exam_front.jpg' %}"
+                data-caption="Computer Hardware Chart — A large labelled diagram..."
+                style="cursor:pointer;">
+                <div class="img-placeholder" style="width:100%;height:100%;">
+                    <img src="{% static '/images/SHS2_Exam_front.jpg' %}" alt="TLM 1">
+                </div>
+
+
+            </div>
+            <div class="tlm-card-body">
+                <p class="tlm-card-title">Examination (Semester 1)</p>
+                <span class="badge badge-red" style="margin-top:12px;">Summative</span>
+                <p class="tlm-card-desc">
+                    This summative exams was held to asses students knowledge area on the 
+                    topics covered in the first semester. The exam was designed to test students 
+                    understanding of the concepts taught in class and their ability to apply them in practical situations.
+                </p><br>
+                <div style="margin-top:12px;">
+                    <a href="{% url 'portfolio:exams' %}" class="btn btn-outline btn-sm"
+                    style="font-size:11px;padding:4px 10px;">
+                        <i class="bi bi-grid"></i> View All Exams
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- TLM Card 2 -->
+        <div class="tlm-card">
+            <div class="tlm-img-wrap" data-lightbox data-src="{% static '/images/SHS1_Quiz.jpg' %}"
+                data-caption="Computer Hardware Chart — A large labelled diagram..."
+                style="cursor:pointer;">
+
+                <div class="img-placeholder" style="width:100%;height:100%;">
+                    <img src="{% static '/images/SHS1_Quiz.jpg' %}" alt="TLM 1">
+                </div>
+
+
+            </div>
+            <div class="tlm-card-body">
+                <p class="tlm-card-title">Quizzes and Exercises (Topic: Computer Hardware)</p>
+                <span class="badge badge-primary" style="margin-top:12px;">Formative</span>
+                <p class="tlm-card-desc">
+                    SHS 1 Quiz was held to asses students knowledge area on the topic of Computer Hardware. 
+                    The quiz was designed to test students understanding of the concepts taught in class and 
+                    their ability to apply them in practical situations.
+                </p><br>
+                <div style="margin-top:12px;">
+                    <a href="{% url 'portfolio:quizzes' %}" class="btn btn-outline btn-sm"
+                    style="font-size:11px;padding:4px 10px;">
+                        <i class="bi bi-grid"></i> View All Quizzes
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- TLM Card 3 -->
+        <div class="tlm-card">
+            <div class="tlm-img-wrap" data-lightbox data-src="{% static '/images/SHS1_HomeWork.jpg' %}"
+                data-caption="Computer Hardware Chart — A large labelled diagram..."
+                style="cursor:pointer;">
+
+                <div class="img-placeholder" style="width:100%;height:100%;">
+                    <img src="{% static '/images/SHS1_HomeWork.jpg' %}" alt="TLM 1">
+                </div>
+
+
+            </div>
+            <div class="tlm-card-body">
+                <p class="tlm-card-title">Assignment</p>
+                <span class="badge badge-primary" style="margin-top:12px;">Formative</span>
+                <p class="tlm-card-desc">
+                    This assignment was given to students to asses their knowledge area on the topic of Computer Hardware.
+                    The assignment was designed to test students understanding of the concepts taught in class and
+                    their ability to apply them in practical situations.
+                </p><br>
+                <div style="margin-top:12px;">
+                    <a href="{% url 'portfolio:assignments' %}" class="btn btn-outline btn-sm"
+                    style="font-size:11px;padding:4px 10px;">
+                        <i class="bi bi-grid"></i> View All Assignments
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- TLM Card 4 -->
+        <div class="tlm-card">
+            <div class="tlm-img-wrap" data-lightbox data-src="{% static '/images/SHS1_HomeWor.jpg' %}"
+                data-caption="Computer Hardware Chart — A large labelled diagram..."
+                style="cursor:pointer;">
+
+                <div class="img-placeholder" style="width:100%;height:100%;">
+                    <img src="{% static '/images/SHS1_HomeWor.jpg' %}" alt="TLM 1">
+                </div>
+
+
+            </div>
+            <div class="tlm-card-body">
+                <p class="tlm-card-title">Project</p>
+                <span class="badge badge-red" style="margin-top:12px;">Summative</span>
+                <p class="tlm-card-desc">
+                    Individuals were given a project to asses their knowledge area on various topics covered in the first semester. 
+                    The project was design to foster creativity and innovation in students.
+                </p><br>
+                <div style="margin-top:12px;">
+                    <a href="{% url 'portfolio:projects' %}" class="btn btn-outline btn-sm"
+                    style="font-size:11px;padding:4px 10px;">
+                        <i class="bi bi-grid"></i> View All Projects
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <!-- Marking Rubric -->
+    <div class="card doc-section">
+        <div class="doc-section">
+            <h3>Marking Rubric / Answer Scheme</h3>
+
+                <!-- Download notice -->
+            <div class="download-bar">
+                <i class="bi bi-file-earmark-pdf-fill" style="color:var(--primary);font-size:18px;"></i>
+                <span>Preview or Download Marking Scheme PDF for SHS 1 1st Semester Exams</span>
+                <a href="{% url 'portfolio:assessment_preview_SHS1' %}" target="_blank" class="btn btn-outline btn-sm">
+                <i class="bi bi-eye"></i> Preview Scheme
+                </a>
+                <a href="{% static 'documents/scheme_of_work.pdf' %}" download class="btn btn-primary btn-sm">
+                    <i class="bi bi-download"></i> Download
+                </a>
+            </div>
+
+            <div class="download-bar">
+                <i class="bi bi-file-earmark-pdf-fill" style="color:var(--primary);font-size:18px;"></i>
+                <span>Preview or Download Marking Scheme PDF for SHS 2 1st Semester</span>
+                <a href="{% url 'portfolio:assessment_preview_SHS2' %}" target="_blank" class="btn btn-outline btn-sm">
+                <i class="bi bi-eye"></i> Preview Scheme
+                </a>
+                <a href="{% static '/documents/FORM_2_MARKING_SCHEME.pdf' %}" download class="btn btn-primary btn-sm">
+                    <i class="bi bi-download"></i> Download
+                </a>
+            </div>
+        </div>
+    </div>
+
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Close">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <img src="" alt="TLM image" id="lightboxImg">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+{% endblock %}
