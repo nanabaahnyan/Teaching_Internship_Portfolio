@@ -79,6 +79,65 @@
     </div>
 </div>
 
+<!-- ── Teaching Video ── -->
+<div class="card" style="margin-bottom:28px;padding:0;overflow:hidden;">
+
+    <!-- Video Header Bar -->
+    <div style="padding:16px 24px;border-bottom:1px solid var(--border);
+                display:flex;align-items:center;justify-content:space-between;
+                flex-wrap:wrap;gap:10px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:36px;height:36px;background:var(--primary-light);
+                        border-radius:8px;display:flex;align-items:center;
+                        justify-content:center;color:var(--primary);font-size:18px;">
+                <i class="bi bi-play-circle-fill"></i>
+            </div>
+            <div>
+                <p style="font-size:14px;font-weight:700;color:var(--text-primary);">
+                    Teaching Video
+                </p>
+                <p style="font-size:12px;color:var(--text-secondary);">
+                    <!--  ⚠️ Change description  -->
+                    ICT Lesson Delivery — List and Sorting in Excel · 1 Art 3 · 21 April, 2026
+                </p>
+            </div>
+        </div>
+        <span class="badge badge-primary">
+            <i class="bi bi-camera-video"></i> &nbsp;Classroom Recording
+        </span>
+    </div>
+
+    <!-- Video Player -->
+    <div style="position:relative;width:100%;background:#000;">
+
+        <!-- LOCAL VIDEO — use this if your file is in static/videos/ -->
+        <video
+            controls
+            style="width:100%;max-height:520px;display:block;background:#000;"
+            poster="{% static 'images/video_thumbnail.jpg' %}"
+            preload="metadata">
+            <source src="{% static '/videos/Teaching_video.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Video Caption -->
+    <div style="padding:16px 24px;background:var(--bg-page);
+                border-top:1px solid var(--border);
+                display:flex;align-items:flex-start;gap:10px;">
+        <i class="bi bi-info-circle"
+           style="color:var(--primary);font-size:16px;margin-top:2px;flex-shrink:0;"></i>
+        <p style="font-size:13px;color:var(--text-secondary);line-height:1.7;">
+            <!--  ⚠️ Replace with your actual video description  -->
+            This video captures a live lesson delivered to 1 Art 3 students
+            on the topic of <strong>Lists and Sorting in Excel</strong> during my teaching internship
+            at Baidoo Bonsoe Senior High Technical School (BBSHTS). The lesson demonstrates the use of
+            TLMs, student interaction, question and answer session, and practical applications.
+        </p>
+    </div>
+
+</div>
+
 <!-- Gallery Grid -->
 <div class="gallery-grid" id="galleryGrid">
 
