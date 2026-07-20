@@ -10,10 +10,20 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
+import sys
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+if getattr(sys, "frozen", False):
+    # Running as portfolio.exe (PyInstaller onefile build). Code, templates
+    # and static sources are unpacked read-only into sys._MEIPASS at launch.
+    BASE_DIR = Path(sys._MEIPASS)
+    # The database must live next to the .exe itself (writable, persists
+    # across runs) rather than inside the temporary extraction folder.
+    DATA_DIR = Path(sys.executable).resolve().parent
+else:
+    BASE_DIR = Path(__file__).resolve().parent.parent
+    DATA_DIR = BASE_DIR
 
 
 # Quick-start development settings - unsuitable for production
@@ -55,7 +65,10 @@ ROOT_URLCONF = "internship_portfolio.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        # Explicit DIRS as a frozen-build safety net: APP_DIRS relies on
+        # portfolio.apps' module path, which PyInstaller's frozen importer
+        # doesn't always resolve to a real filesystem path.
+        "DIRS": [BASE_DIR / "portfolio" / "templates"] if getattr(sys, "frozen", False) else [],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -76,7 +89,7 @@ WSGI_APPLICATION = "internship_portfolio.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "NAME": DATA_DIR / "db.sqlite3",
     }
 }
 
@@ -117,4 +130,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'portfolio' / 'static']
+if getattr(sys, "frozen", False):
+    # Large video files aren't embedded in the .exe (PyInstaller's onefile
+    # archive can't hold single files over 4GB); they instead ship as plain
+    # files in portfolio/static/videos next to the .exe and are served from
+    # there.
+    STATICFILES_DIRS.append(DATA_DIR / 'portfolio' / 'static')
 STATIC_ROOT = BASE_DIR / 'staticfiles'

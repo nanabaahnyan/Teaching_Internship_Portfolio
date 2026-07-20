@@ -7,8 +7,10 @@
 
 {% block header_actions %}
     <!--  ⚠️ ADD signed mentor comment PDF to: static/documents/mentor_comments.pdf  -->
-    <a href="{% static 'documents/mentor_comments.pdf' %}" download class="btn btn-primary btn-sm">
-        <i class="bi bi-download"></i> Download PDF
+    <a href="{% url 'portfolio:gallery' %}" class="btn btn-primary btn-sm">
+        <class="nav-link {% if active_page == 'gallery' %}active{% endif %}">
+        <i class="bi bi-images"></i>
+        <span>Gallery</span>
     </a>
 {% endblock %}
 
@@ -29,36 +31,44 @@
 <div class="mentor-grid">
 
     <!-- Mentor 1 -->
-    <div class="mentor-card">
-        <div class="mentor-quote-icon"><i class="bi bi-quote"></i></div>
-        <p class="mentor-comment">
-            <!--  ⚠️ Replace with actual mentor comment  -->
-            "[Add the exact comment or feedback given by your school mentor teacher here.
-            This should be a direct quote or a faithful paraphrase of what they said or wrote
-            in their observation report / feedback form.]"
-        </p>
-        <div class="mentor-footer">
-            <div>
-                <p class="mentor-name">[Mentor Teacher Name]</p>
-                <p class="mentor-role">Mentor Teacher · [Placement School]</p>
-            </div>
-            <span class="mentor-date">[Date of observation]</span>
-        </div>
-    </div>
-
-    <!-- Mentor 2 (University Supervisor) -->
     <div class="mentor-card alt-red">
         <div class="mentor-quote-icon"><i class="bi bi-quote"></i></div>
         <p class="mentor-comment">
-            "[Add the feedback from your university supervisor here — this could be from a
-            formal classroom visit, a written evaluation report, or verbal feedback session.]"
+            <b>Strengths</b><br>
+            Motivates students during lesson, exhibits strong knowledge in the subject, proper use of
+            Teaching Learning Materials (TLM's), engage studentss during lessons, and formative
+            assessment was given to students. <br><br>
+
+            <b>Areas for Development</b><br>
+            Communication could have been to students' level
         </p>
         <div class="mentor-footer">
             <div>
-                <p class="mentor-name">[University Supervisor Name]</p>
-                <p class="mentor-role">University Supervisor · UEW</p>
+                <p class="mentor-name">Madam Rebecca Adu-Gyamfi</p>
+                <p class="mentor-role">Mentor Teacher · Baidoo Bonsoe Senior High Technical School</p>
             </div>
-            <span class="mentor-date">[Date of visit]</span>
+            <span class="mentor-date">110th December, 2025</span>
+        </div>
+    </div>
+
+
+    <!-- Mentor 2 (University Supervisor) -->
+    <div class="mentor-card">
+        <div class="mentor-quote-icon"><i class="bi bi-quote"></i></div>
+        <p class="mentor-comment">
+            <b>Strengths</b><br>
+            He showed enough confidence, exhibit strong knowledge on the subject, lesson
+            objective was met and started on time, and students showed interest in his lesson delivery. <br><br>
+
+            <b>Areas for Development</b><br>
+            Needs to learn how to recall name of students and lesson could have been more student centered.
+        </p>
+        <div class="mentor-footer">
+            <div>
+                <p class="mentor-name">Madam Rebecca Adu-Gyamfi</p>
+                <p class="mentor-role">Mentor Teacher · Baidoo Bonsoe Senior High Technical School</p>
+            </div>
+            <span class="mentor-date">14th December, 2025</span>
         </div>
     </div>
 
@@ -66,15 +76,20 @@
     <div class="mentor-card alt-orange">
         <div class="mentor-quote-icon"><i class="bi bi-quote"></i></div>
         <p class="mentor-comment">
-            "[Add a second comment from your mentor teacher or any other supervising teacher
-            who observed one of your lessons during the internship period.]"
+            <b>Strengths</b><br>
+            Gives procedural and instructional directions clearly, presents lessons in a systematic manner,
+            manages classroom routines effectively, projects voice/hand shapes properly, and relates lesson
+            to prior knowledge and experiences.<br><br>
+
+            <b>Areas for Development</b><br>
+            Must always face students when talking.
         </p>
         <div class="mentor-footer">
             <div>
-                <p class="mentor-name">[Observer Name]</p>
-                <p class="mentor-role">[Their Role &amp; School/Institution]</p>
+                <p class="mentor-name">Madam Rebecca Adu-Gyamfi</p>
+                <p class="mentor-role">Mentor Teacher · Baidoo Bonsoe Senior High Technical School</p>
             </div>
-            <span class="mentor-date">[Date]</span>
+            <span class="mentor-date">3rd February, 2026</span>
         </div>
     </div>
 
@@ -82,15 +97,19 @@
     <div class="mentor-card alt-green">
         <div class="mentor-quote-icon"><i class="bi bi-quote"></i></div>
         <p class="mentor-comment">
-            "[Optional: Add a comment from the Head of Department, the Headmaster/Headmistress,
-            or a peer teacher who observed your work during the placement.]"
+            <b>Strengths</b><br>
+            Lesson was taught well, mentee showed a high level of confidence, designed handout material for practicals was used
+            properly. <br><br>
+
+            <b>Areas for Development</b><br>
+            Must stop talking when facing the whiteboard.
         </p>
         <div class="mentor-footer">
             <div>
-                <p class="mentor-name">[Name]</p>
-                <p class="mentor-role">[Role — e.g. HOD ICT · Placement School]</p>
+                <p class="mentor-name">Prof. Kwaku Kwaa Aidoo</p>
+                <p class="mentor-role">Supervisor · UEW</p>
             </div>
-            <span class="mentor-date">[Date]</span>
+            <span class="mentor-date">16th February, 2026</span>
         </div>
     </div>
 

@@ -21,6 +21,7 @@ urlpatterns = [
     path('quizzes/', views.quizzes, name='quizzes'),
     path('tlm/', views.tlm, name='tlm'),
     path('reflective/', views.reflective, name='reflective'),
+    path('reflective/preview/', views.preview_reflection, name='reflection_preview'),
     path('mentor/', views.mentor, name='mentor'),
     path('gallery/', views.gallery, name='gallery'),
     path('assignments/', views.assignments, name='assignments'),

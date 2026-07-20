@@ -78,6 +78,16 @@ def preview_philosophy(request):
         response['Content-Disposition'] = 'inline; filename="Teaching_Philosophy.pdf"'
         return response
     
+def preview_reflection(request):
+    pdf_path = os.path.join(settings.BASE_DIR, 'portfolio', 'static', 'documents', 'REFLECTIVE_PRACTICE.pdf')
+    if not os.path.exists(pdf_path):
+        raise Http404("Reflective practice not found")
+    
+    with open(pdf_path, 'rb') as pdf:
+        response = HttpResponse(pdf.read(), content_type='application/pdf')
+        response['Content-Disposition'] = 'inline; filename="REFLECTIVE_PRACTICE.pdf"'
+        return response
+    
 def preview_scheme_FORM1(request):
     pdf_path = os.path.join(settings.BASE_DIR, 'portfolio', 'static', 'documents', 'FORM_1_Scheme_of_Work.pdf')
     if not os.path.exists(pdf_path):

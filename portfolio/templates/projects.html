@@ -31,7 +31,6 @@
         <button class="btn btn-primary btn-sm filter-btn active" data-filter="all">All</button>
         <button class="btn btn-ghost btn-sm filter-btn" data-filter="shs1">SHS 1</button>
         <button class="btn btn-ghost btn-sm filter-btn" data-filter="shs2">SHS 2</button>
-        <button class="btn btn-ghost btn-sm filter-btn" data-filter="shs3">SHS 3</button>
         <button class="btn btn-ghost btn-sm filter-btn" data-filter="individual">Individual</button>
         <button class="btn btn-ghost btn-sm filter-btn" data-filter="group">Group</button>
     </div>
@@ -47,15 +46,17 @@
                 overflow:hidden;box-shadow:var(--shadow-sm);
                 transition:box-shadow .2s,transform .2s;">
         <div data-lightbox
-             data-src="{% static 'images/assessments/project1.jpg' %}"
-             data-caption="[Project Title]"
+             data-src="{% static '/images/Project_Topology.jpg' %}"
+             data-caption="Network Topologies"
              style="aspect-ratio:4/3;overflow:hidden;cursor:pointer;
                     background:var(--bg-page);position:relative;">
+            <img src="{% static '/images/Project_Topology.jpg' %}" alt="Network Topologies"
+                 style="width:100%;height:100%;object-fit:cover; transition:transform .4s ease;">
             <div style="width:100%;height:100%;display:flex;flex-direction:column;
                         align-items:center;justify-content:center;gap:8px;
                         color:var(--text-light);">
                 <i class="bi bi-image" style="font-size:32px;color:var(--border);"></i>
-                <span style="font-size:12px;">project1.jpg</span>
+                <span style="font-size:12px;">Project on Topology</span>
             </div>
             <div style="position:absolute;inset:0;background:rgba(16,185,129,.15);
                         opacity:0;transition:opacity .2s;display:flex;
@@ -69,12 +70,12 @@
             <div style="display:flex;justify-content:space-between;
                         align-items:flex-start;gap:8px;margin-bottom:6px;">
                 <p style="font-size:13.5px;font-weight:700;color:var(--text-primary);
-                           line-height:1.4;">[Project 1 Title]</p>
+                           line-height:1.4;">Network Topologies</p>
                 <span class="badge badge-green" style="flex-shrink:0;">Project</span>
             </div>
             <p style="font-size:12.5px;color:var(--text-secondary);
                        line-height:1.6;margin-bottom:10px;">
-                [Description — objectives, deliverables, and outcome.]
+                This project was designed to assess students understanding on the practical drawing and implementation of network topologies.
             </p>
             <div style="display:flex;gap:6px;flex-wrap:wrap;">
                 <span style="font-size:11px;background:#D1FAE5;color:#059669;
@@ -84,13 +85,62 @@
                              padding:2px 8px;border-radius:var(--radius-pill);
                              font-weight:600;">Group</span>
                 <span style="font-size:11px;color:var(--text-light);">
-                    <i class="bi bi-calendar3"></i> [Date]
+                    <i class="bi bi-calendar3"></i> 30th November, 2026
                 </span>
             </div>
         </div>
     </div>
 
-    <!--  ⚠️ Copy card above to add more projects  -->
+    <div class="assess-card" data-filter="shs2 individual"
+         style="background:var(--bg-card);border:1px solid var(--border);
+                border-top:3px solid var(--accent-green);border-radius:var(--radius-md);
+                overflow:hidden;box-shadow:var(--shadow-sm);
+                transition:box-shadow .2s,transform .2s;">
+        <div data-lightbox
+             data-src="{% static '/images/Project_Hardware_and Sotware.jpg' %}"
+             data-caption="Network Topologies"
+             style="aspect-ratio:4/3;overflow:hidden;cursor:pointer;
+                    background:var(--bg-page);position:relative;">
+            <img src="{% static '/images/Project_Hardware_and Sotware.jpg' %}" alt="Network Topologies"
+                 style="width:100%;height:100%;object-fit:cover; transition:transform .4s ease;">
+            <div style="width:100%;height:100%;display:flex;flex-direction:column;
+                        align-items:center;justify-content:center;gap:8px;
+                        color:var(--text-light);">
+                <i class="bi bi-image" style="font-size:32px;color:var(--border);"></i>
+                <span style="font-size:12px;">Project on Computer Hardware and Softwares</span>
+            </div>
+            <div style="position:absolute;inset:0;background:rgba(16,185,129,.15);
+                        opacity:0;transition:opacity .2s;display:flex;
+                        align-items:center;justify-content:center;" class="item-overlay">
+                <i class="bi bi-zoom-in"
+                   style="font-size:32px;color:#fff;
+                          filter:drop-shadow(0 2px 4px rgba(0,0,0,.4));"></i>
+            </div>
+        </div>
+        <div style="padding:14px;">
+            <div style="display:flex;justify-content:space-between;
+                        align-items:flex-start;gap:8px;margin-bottom:6px;">
+                <p style="font-size:13.5px;font-weight:700;color:var(--text-primary);
+                           line-height:1.4;">Project on Computer Hardware and Softwares</p>
+                <span class="badge badge-green" style="flex-shrink:0;">Project</span>
+            </div>
+            <p style="font-size:12.5px;color:var(--text-secondary);
+                       line-height:1.6;margin-bottom:10px;">
+                This project was designed to assess students understanding on computer hardware and software.
+            </p>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                <span style="font-size:11px;background:#D1FAE5;color:#059669;
+                             padding:2px 8px;border-radius:var(--radius-pill);
+                             font-weight:600;">SHS 2</span>
+                <span style="font-size:11px;background:#D1FAE5;color:#059669;
+                             padding:2px 8px;border-radius:var(--radius-pill);
+                             font-weight:600;">Individual</span>
+                <span style="font-size:11px;color:var(--text-light);">
+                    <i class="bi bi-calendar3"></i> 12th December, 2026
+                </span>
+            </div>
+        </div>
+    </div>
 
 </div>
 

@@ -7,8 +7,11 @@
 
 {% block header_actions %}
     <!--  ⚠️ ADD your reflective journal PDF to: static/documents/reflective_journal.pdf  -->
+    <a href="{% url 'portfolio:reflection_preview' %}" target="_blank" class="btn btn-outline btn-sm">
+        <i class="bi bi-eye"></i> Preview
+    </a>
     <a href="{% static 'documents/reflective_journal.pdf' %}" download class="btn btn-primary btn-sm">
-        <i class="bi bi-download"></i> Download Journal
+        <i class="bi bi-download"></i> Download Reflection
     </a>
 {% endblock %}
 
@@ -34,40 +37,63 @@
 
         <div style="background:var(--bg-page);border-radius:var(--radius-md);padding:14px;text-align:center;border:1px solid var(--border);">
             <div style="width:32px;height:32px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;margin:0 auto 8px;">1</div>
-            <p style="font-size:13px;font-weight:600;color:var(--text-primary);">Description</p>
-            <p style="font-size:11.5px;color:var(--text-secondary);margin-top:4px;">What happened?</p>
+            <p style="font-size:13px;font-weight:600;color:var(--text-primary);">Coverage</p>
+            <p style="font-size:11.5px;color:var(--text-secondary);margin-top:4px;">Scope of Lesson</p>
         </div>
 
         <div style="background:var(--bg-page);border-radius:var(--radius-md);padding:14px;text-align:center;border:1px solid var(--border);">
             <div style="width:32px;height:32px;background:var(--accent-red);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;margin:0 auto 8px;">2</div>
-            <p style="font-size:13px;font-weight:600;color:var(--text-primary);">Feelings</p>
-            <p style="font-size:11.5px;color:var(--text-secondary);margin-top:4px;">What did you think &amp; feel?</p>
+            <p style="font-size:13px;font-weight:600;color:var(--text-primary);">Instructional Objectives</p>
+            <p style="font-size:11.5px;color:var(--text-secondary);margin-top:4px;">What will be achieved at the end.</p>
         </div>
 
         <div style="background:var(--bg-page);border-radius:var(--radius-md);padding:14px;text-align:center;border:1px solid var(--border);">
             <div style="width:32px;height:32px;background:var(--accent-orange);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;margin:0 auto 8px;">3</div>
-            <p style="font-size:13px;font-weight:600;color:var(--text-primary);">Evaluation</p>
-            <p style="font-size:11.5px;color:var(--text-secondary);margin-top:4px;">What was good / bad?</p>
+            <p style="font-size:13px;font-weight:600;color:var(--text-primary);">Introduction</p>
+            <p style="font-size:11.5px;color:var(--text-secondary);margin-top:4px;">Brainstorming</p>
         </div>
 
         <div style="background:var(--bg-page);border-radius:var(--radius-md);padding:14px;text-align:center;border:1px solid var(--border);">
             <div style="width:32px;height:32px;background:var(--accent-green);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;margin:0 auto 8px;">4</div>
-            <p style="font-size:13px;font-weight:600;color:var(--text-primary);">Analysis</p>
-            <p style="font-size:11.5px;color:var(--text-secondary);margin-top:4px;">Why did it happen?</p>
+            <p style="font-size:13px;font-weight:600;color:var(--text-primary);">Activities</p>
+            <p style="font-size:11.5px;color:var(--text-secondary);margin-top:4px;">What will be done</p>
         </div>
 
         <div style="background:var(--bg-page);border-radius:var(--radius-md);padding:14px;text-align:center;border:1px solid var(--border);">
             <div style="width:32px;height:32px;background:#7C3AED;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;margin:0 auto 8px;">5</div>
-            <p style="font-size:13px;font-weight:600;color:var(--text-primary);">Conclusion</p>
-            <p style="font-size:11.5px;color:var(--text-secondary);margin-top:4px;">What else could you have done?</p>
+            <p style="font-size:13px;font-weight:600;color:var(--text-primary);">Lesson Closure</p>
+            <p style="font-size:11.5px;color:var(--text-secondary);margin-top:4px;">End of Lesson</p>
         </div>
 
         <div style="background:var(--bg-page);border-radius:var(--radius-md);padding:14px;text-align:center;border:1px solid var(--border);">
             <div style="width:32px;height:32px;background:#0EA5E9;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;margin:0 auto 8px;">6</div>
-            <p style="font-size:13px;font-weight:600;color:var(--text-primary);">Action Plan</p>
-            <p style="font-size:11.5px;color:var(--text-secondary);margin-top:4px;">What will you do next time?</p>
+            <p style="font-size:13px;font-weight:600;color:var(--text-primary);">Strengths</p>
+            <p style="font-size:11.5px;color:var(--text-secondary);margin-top:4px;">What i did best</p>
         </div>
 
+        <div style="background:var(--bg-page);border-radius:var(--radius-md);padding:14px;text-align:center;border:1px solid var(--border);">
+            <div style="width:32px;height:32px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;margin:0 auto 8px;">1</div>
+            <p style="font-size:13px;font-weight:600;color:var(--text-primary);">Challenges</p>
+            <p style="font-size:11.5px;color:var(--text-secondary);margin-top:4px;">Problems encountered during lesson delivery</p>
+        </div>
+
+        <div style="background:var(--bg-page);border-radius:var(--radius-md);padding:14px;text-align:center;border:1px solid var(--border);">
+            <div style="width:32px;height:32px;background:var(--accent-red);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;margin:0 auto 8px;">2</div>
+            <p style="font-size:13px;font-weight:600;color:var(--text-primary);">Innovative Solutions</p>
+            <p style="font-size:11.5px;color:var(--text-secondary);margin-top:4px;">Solutions to problems encountered</p>
+        </div>
+
+        <div style="background:var(--bg-page);border-radius:var(--radius-md);padding:14px;text-align:center;border:1px solid var(--border);">
+            <div style="width:32px;height:32px;background:var(--accent-orange);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;margin:0 auto 8px;">3</div>
+            <p style="font-size:13px;font-weight:600;color:var(--text-primary);">Lessons and Insights Gained</p>
+            <p style="font-size:11.5px;color:var(--text-secondary);margin-top:4px;">What i learned</p>
+        </div>
+
+        <div style="background:var(--bg-page);border-radius:var(--radius-md);padding:14px;text-align:center;border:1px solid var(--border);">
+            <div style="width:32px;height:32px;background:var(--accent-green);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;margin:0 auto 8px;">4</div>
+            <p style="font-size:13px;font-weight:600;color:var(--text-primary);">Conclusion</p>
+            <p style="font-size:11.5px;color:var(--text-secondary);margin-top:4px;">Reflection Conclusion</p>
+        </div>
     </div>
 </div>
 
@@ -78,31 +104,206 @@
             <i class="bi bi-journal-text" style="color:var(--primary);margin-right:8px;"></i>
             Reflection
         </p>
-        <span class="doc-meta-item"><i class="bi bi-calendar3"></i> [Date of lesson]</span>
+        <span class="doc-meta-item"><i class="bi bi-calendar3"></i> 20th January, 2026</span>
     </div>
-    <!--  ⚠️ Replace each section with your actual reflection  -->
-    <div class="doc-section"><h3>Description — What happened?</h3><p>[Describe the lesson or incident you are reflecting on. What topic did you teach? What happened in the classroom?]</p></div>
+
+    <div class="doc-section">
+        <h3>Coverage</h3>
+        <p>
+            <B>INSTITUTION:</B> Baidoo Bonsoe Senior High Technical School<br>
+            <b>DEPARTMENT:</b> ELECTIVE ICT<br>
+            <b>CLASS:</b> SHS 2<br>
+            <b>CLASS SIZE:</b> 48<br>
+            <b>TOPIC:</b> Analyzing Numerical Data Using Spreadsheet Software<br>
+            <b>SUB-TOPIC:</b> Basic Formulae and Functions (SUM, AVERAGE, MIN, MAX).<br>
+            <b>DURATION:</b> 120 minutes<br>
+            <b>DATE:</b> Week Ending 20th January, 2026<br>
+        </p>
+    </div>
+
     <div class="divider"></div>
-    <div class="doc-section"><h3>Feelings — What did you think and feel?</h3><p>[How did you feel before, during, and after the lesson? Were you confident, anxious, surprised?]</p></div>
+    <div class="doc-section">
+        <h3><u>Instructional Objectives</u></h3>
+        <p>
+            <b>By the end of the two lessons, students were able to:</b>
+            <ol>
+                <li>Write and apply a basic formula (e.g. =A1+B1) in Microsoft Excel.</li>
+                <li>Use the SUM, AVERAGE, MIN and MAX functions to summarize a set of marks.</li>
+            </ol>
+        </p>
+    </div>
+
     <div class="divider"></div>
-    <div class="doc-section"><h3>Evaluation — What was good or bad?</h3><p>[Evaluate the experience — what went well, and what did not go as expected?]</p></div>
+    <div class="doc-section">
+        <h3><u>Introduction</u></h3>
+        <p>
+            I opened with a quick brainstorm: why is it better to use a formula than to add numbers by hand? A few
+            students who help with family shops or church accounts already had a rough answer: it is faster, and you do
+            not lose count partway through. I let that carry the lesson into the bigger idea of automation, that a formula
+            is more accurate and quicker than doing the same sum by hand, and less likely to go wrong from a careless
+            slip.
+        </p>
+        <p>
+            Students reopened the workbook they had started the previous week. I projected the formula bar and worked
+            through a simple formula, =A1+B1, before moving to =SUM(B2:B10), keeping the marks dataset on screen
+            the whole time so students could watch the number in the cell change as I edited the formula.
+        </p>
+    </div>
+
     <div class="divider"></div>
-    <div class="doc-section"><h3>Analysis — Why did it happen?</h3><p>[Think more deeply — why did things go well or poorly? What theories or knowledge can you apply to understand this?]</p></div>
+    <div class="doc-section">
+        <h3>Activities</h3>
+        <p>
+            <b>Activity 1 (Formulae and SUM)</b>
+            Students worked in their groups to apply SUM to a set of class marks I had
+            prepared, then tried MIN and MAX to find the highest and lowest scores. A few who spotted the pattern
+            quickly went ahead and tested the same formulas on a different column without being asked.
+        </p><br>
+        <p>
+            <b>Activity 2 (AutoFill and a Family Budget):</b>
+            I demonstrated AutoFill, dragging a formula down a column
+            instead of retyping it, which drew a genuine reaction from a couple of students who had been retyping
+            formulas manually. In their groups, students then built a short family budget sheet and applied SUM and
+            AVERAGE to it. This was the point where the exercise stopped feeling like a routine lab task. Several groups
+            started adding their own budget items, transport, food, school fees, instead of the ones I had suggested.
+
+        </p>
+    </div>
+
     <div class="divider"></div>
-    <div class="doc-section"><h3>Conclusion — What else could you have done?</h3><p>[If you had the chance to redo this lesson, what would you change? What have you learned about yourself as a teacher?]</p></div>
+    <div class="doc-section">
+        <h3>Lesson Closure</h3>
+        <p>
+            I ended both lessons by returning to the essential questions rather than just asking whether there were
+            questions. How does SUM promote responsibility in data handling? How can a computer decide pass or fail
+            automatically, and what could go wrong if the formula is set up incorrectly? Framing the recap this way
+            pushed the conversation past "SUM adds numbers" toward why getting the formula right actually matters
+            when the output affects someone's grade.
+        </p>
+    </div>
+
     <div class="divider"></div>
-    <div class="doc-section" style="margin-bottom:0;"><h3>Action Plan — What will you do next time?</h3><p>[Concrete steps you will take in future lessons based on this reflection.]</p></div>
+    <div class="doc-section">
+        <h3>Strengths</h3>
+        <p>
+            <ol>
+                <li>
+                    Building on prior knowledge: reopening the previous week's workbook meant students were not starting
+                    cold. They recognized the interface and moved into the new functions quickly.
+                </li>
+                <li>
+                    Demonstration before practice: working through =A1+B1 and =SUM() live, with the marks dataset
+                    visible, gave students something concrete to copy rather than an abstract explanation of syntax
+                </li>
+                <li>
+                    Relevance: the family budget task made the numbers personal. Students who were usually quiet during
+                    a routine lab task got noticeably more talkative once the sheet was about their own money.
+                </li>
+                <li>
+                    Growing confidence: by the end of the Lesson, most groups were applying SUM, AVERAGE, MIN and
+                    MAX correctly with little prompting, and several were visibly proud to be handling a tool they associate
+                    with real office work.
+                </li>
+                <li>
+                    Students who got problems right were clearly pleased with themselves, and some began helping
+                    neighboring groups without being asked.
+                </li>
+            </ol>
+        </p>
+    </div>
+
+    <div class="divider"></div>
+    <div class="doc-section">
+        <h3>Challenges</h3>
+        <p>
+            <ol>
+                <li>
+                    With earlier weeks, not every student had their own laptop, so some groups worked two or three to a
+                    machine and I also took teachers laptop for them to use, which cut into the hands-on time of whoever
+                    was not at the keyboard.
+                </li>
+                <li>
+                     Pace mismatch: a handful of students who had grasped SUM and AutoFill quickly in Lesson 1 were
+                        ready to move faster into Lesson 2's IF logic, while others were still consolidating the basics.
+                </li>
+            </ol>
+        </p>
+    </div>
+
+    <div class="divider"></div>
+    <div class="doc-section">
+        <h3>Innovative Solutions</h3>
+        <p>
+            <ol>
+                <li>
+                    I structured the budget and grading tasks so the student not at the keyboard had a specific job, reading
+                    out the next mark, checking the formula against the printed steps, or recording the group's results in
+                    their notebook, so device-sharing did not mean some students were sitting out.
+                </li>
+                <li>
+                    Students who finished early were pointed to a harder version of the same task, a larger dataset which
+                    kept them engaged without splitting the lesson into a separate track, and often made them the first ones
+                    I paired with a struggling group.
+                </li>
+            </ol>
+        </p>
+    </div>
+
+    <div class="divider"></div>
+    <div class="doc-section">
+        <h3><u>Lessons and Insights Gained</u></h3>
+        <p>
+            <ol>
+                <li>
+                    Every function landed better once students typed it themselves against real data than when I only
+                    explained it. The budget sheet made this obvious, engagement visibly rose the moment the numbers
+                    became theirs.
+                </li>
+                <li>
+                    Peer support is a resource, not a distraction. Pairing a fast group with a stuck one solved problems faster
+                    than me circulating alone, and gave the fast group a reason to consolidate what they already knew.
+                </li>
+                <li>
+                    Giving the non-typing student in a shared-device group a defined job kept the lesson fair instead of
+                    quietly leaving one student behind.
+                </li>
+                <li>
+                    Asking why SUM promotes responsible data handling got more out of students than asking them to
+                    restate the function's syntax.
+                </li>
+            </ol>
+        </p>
+    </div>
+
+    <div class="divider"></div>
+    <div class="doc-section">
+        <h3><u>Conclusion</u></h3>
+        <p>
+            Reflecting on this week's lessons was useful mainly because it forced me to separate what looked like a small
+            technical hiccup, a misplaced bracket, from what it was actually revealing. That functions needed a slower,
+            more structured introduction than a straight demonstration. The pattern that keeps repeating across my lessons
+            showed up here again too. Students learn a tool fastest when it is doing something that matters to them, and
+            the biggest barriers are almost always practical, a shared laptop, a mistyped formula, rather than a lack of
+            interest. I am carrying the printed reference card idea and the "give the non-typist a job" habit into the rest of
+            the term.
+        </p>
+    </div>
+
 </div>
 
 <!-- Overall Reflection -->
 <div class="card">
     <p class="section-title"><i class="bi bi-stars" style="color:var(--primary);margin-right:8px;"></i>Overall Internship Reflection</p>
     <p style="font-size:14px;color:var(--text-secondary);line-height:1.85;">
-        <!--  ⚠️ Write your overall reflection on the internship as a whole  -->
-        [Write a comprehensive reflection on your entire internship experience.
-        Consider: How have you grown as a teacher? What were your greatest challenges?
-        What are you most proud of? How has this experience shaped your view of teaching
-        as a profession?]
+        Across both semesters, from Form 1's first lesson on computer hardware to Form 2's last lesson on digital devices, the same approach 
+        carried through eleven weeks of teaching: demonstrate a skill, then hand it over to students immediately on something of their own, 
+        a birthday card, a family budget, a slide with their name on it, and that consistently worked, with supervisors describing my delivery 
+        as clear and systematic and my own reflections repeatedly landing on "goals largely achieved." At the same time, two weaknesses showed u
+        p more than once and are worth being honest about: I was told twice to face the class rather than the board while talking, and once t
+        hat my explanations sat above where students actually were, and underneath both was a resource problem, too few laptops, that meant a 
+        chunk of every practical lesson was spent watching rather than doing. Going forward, the fix isn't a different philosophy but a sharper 
+        version of this one: keep the doing-first structure, but be more deliberate about communicating while teaching it and make sure every 
+        student sharing a device has something to do besides wait their turn.
     </p>
 </div>
 

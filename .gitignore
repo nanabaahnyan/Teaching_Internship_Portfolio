@@ -1,2 +1,8 @@
 *.mp4
 *.mp4
+
+# PyInstaller build artifacts (portfolio.exe itself is committed)
+build/
+dist/
+*.spec
+
